@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#center-main{
+    width: 80%;
+    /* border: 1px solid red; */
+    align-items: center;
+    position: relative;
+    /* left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto; */
+    top: 12rem;
+    margin: auto;
+}
+.c_img{
+    margin: 1rem;
+    height: 18rem;
+    width: 19rem;
+    border-radius: 20px;
+    box-shadow: 5px 10px 18px #888888 ;
+}

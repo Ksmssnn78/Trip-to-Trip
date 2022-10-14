@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-body {
+    /* border: 2px solid red; */
+    border-radius: 2rem;
+    width: 50%;
+    height: auto;
+    margin: 1rem;
+    margin-top: 2.5rem;
+    padding: .3rem;
+    position: absolute;
+    right: 1rem;
+}
+
+#navlink {
+    border: 2px solid yellow;
+    background-color: yellow;
+    border-radius: 2rem;
+    width: auto;
+    height: auto;
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.links {
+    color: black;
+    margin: auto;
+    padding: auto;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.link-reg {
+    border: 2px solid white;
+    border-radius: 1rem;
+    background-color: white;
+    padding: .2rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    box-shadow: 3px 3px 5px lightblue;
+}
