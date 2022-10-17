@@ -12,9 +12,9 @@ const Home = () => {
             </form>
             <div id='slogun'>
                 <h1>GO</h1>
-                <h1>Explore,</h1> 
-                <h1>Its a <em>Big world</em> </h1>
-                <h1>Out there!</h1>
+                <em><h1>Explore,</h1> 
+                <h1>Its a <b>Big world</b> </h1>
+                <h1>Out there!</h1></em>
             </div>
         </div>
     );
