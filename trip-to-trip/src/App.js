@@ -18,6 +18,7 @@ function App() {
         <Router>
           <Header></Header>
           <Routes>
+              <Route exact path="/Home" element={<Home/>}/>
               <Route exact path="/Discover" element={<DiscoverPage/>}/>
               <Route exact path='/Community' element={<Community/>}/>
               <Route exact path='/SpecialDeal' element={<Home/>}/>
