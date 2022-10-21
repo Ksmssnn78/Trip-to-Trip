@@ -26,6 +26,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(170, 47, 228);
 }
 #outlined-username, #outlined-email, #outlined-address{
   width: 410px;

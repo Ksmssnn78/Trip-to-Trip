@@ -1,34 +1,37 @@
 import React from 'react';
 import './SignIn.css';
-import Button from "react-bootstrap/Button";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import Form from "react-bootstrap/Form";
 
 const SignIn = () => {
     return (
         <div className="Container-signin">
             <div id="sign-title">
-                <h1 className="display-4">Sign In</h1>
+                <h1 className="display-6">Sign In</h1>
             </div>
 
             <Form id="SignIn">
                 <Form.Group className="mb-3">
-                    <label>
+                    {/* <label>
                         <i className="zmdi zmdi-key"></i>
                     </label>
                     <Form.Label>Username</Form.Label>
-                    <Form.Control className="username" id="username" placeholder="Enter your username"></Form.Control>
+                    <Form.Control className="username" id="username" placeholder="Enter your username"></Form.Control> */}
+                    <TextField id="outlined-loguser" defaultValue="" size="small" label="Uername" variant="outlined" />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <label>
+                    {/* <label>
                         <i className="zmdi zmdi-email"></i>
                     </label>
                     <Form.Label>Email</Form.Label>
-                    <Form.Control className="email" id="email" placeholder="Enter your email"></Form.Control>
+                    <Form.Control className="email" id="email" placeholder="Enter your email"></Form.Control> */}
+                    <TextField id="outlined-logpass" defaultValue="" size="small" label="Password" variant="outlined" />
                 </Form.Group>
 
-                <Form.Group id="btn-submit">
-                    <Button id="signin" className="btn btn-sm blue">Sign In</Button>
+                <Form.Group id="btn">
+                    <Button id="btn-signin" variant="contained">Sign In</Button>
                 </Form.Group>
             </Form >
         </div >
