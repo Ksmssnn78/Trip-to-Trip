@@ -2,6 +2,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header/Header';
+import Register from './RegisterPage/RegisterPage';
+import SignIn from './SignIn/SignIn';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -23,8 +25,8 @@ function App() {
               <Route exact path='/Community' element={<Community/>}/>
               <Route exact path='/SpecialDeal' element={<Home/>}/>
               <Route exact path='/AboutUs' element={<Home/>}/>
-              <Route exact path='/SignIn' element={<Home/>}/>
-              <Route exact path='/Register' element={<Home/>}/>
+              <Route exact path='/SignIn' element={<SignIn/>}/>
+              <Route exact path='/Register' element={<Register/>}/>
               <Route exact path='/' element={<Home/>}/>
           </Routes>
         </Router>

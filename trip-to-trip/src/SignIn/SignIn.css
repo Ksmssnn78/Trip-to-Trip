@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../resources/register.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+}
+.Container-signin {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, -50%);
+  padding: 20px 30px 30px 30px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
+  text-align: center;
+}
+#sign-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: rgb(170, 47, 228);
+}
+#outlined-loguser, #outlined-logpass{
+  width: 300px;
+}
+#btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+#btn-signin {
+  width: 200px;
+  background-color: rgb(31, 32, 32);
+}
