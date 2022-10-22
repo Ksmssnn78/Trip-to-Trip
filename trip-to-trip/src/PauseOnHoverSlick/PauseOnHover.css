@@ -1,18 +1,40 @@
+:root{
+    --display-shown-POH: visible;
+    --image-height-POH: 14rem;
+    --title-width-POH:auto;
+  }
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+.Slider{
+    visibility: var(--display-shown-POH);
 }
 #pause-main{
-    width: 80%;
-    border: 1px solid blue;
+    width: 90%;
+    /* border: 1px solid blue; */
     margin: auto;
-    top: 600px;
+    top: 10rem;
     position: relative;
+   
+}
+#POH-title{
+    visibility: var(--display-shown-POH);
+    width: var(--title-width-POH);
+    transition: 2s;
+    overflow: hidden;
+    height: 2rem;
 }
 .P_img{
-    height: 250px;
+    height: var(--image-height-POH);
     width: 300px;
+    padding:10px;
     border-radius: 20px;
-    box-shadow: 5px 10px 18px #888888 ;
+    visibility: var(--display-shown-POH);
+    transition: 1s;
+    /* box-shadow: 5px 10px 18px #888888 ; */
 }
