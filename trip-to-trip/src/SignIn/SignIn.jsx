@@ -18,7 +18,7 @@ const SignIn = () => {
                     </label>
                     <Form.Label>Username</Form.Label>
                     <Form.Control className="username" id="username" placeholder="Enter your username"></Form.Control> */}
-                    <TextField id="outlined-loguser" defaultValue="" size="small" label="Uername" variant="outlined" />
+                    <TextField id="outlined-loguser" defaultValue="" size="small" label="Username" variant="outlined" />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
@@ -33,6 +33,10 @@ const SignIn = () => {
                 <Form.Group id="btn">
                     <Button id="btn-signin" variant="contained">Sign In</Button>
                 </Form.Group>
+                <p id="reg-link">
+                    Don't have an account?
+                    <a href='#Register'>Register here</a>
+                </p>
             </Form >
         </div >
     );

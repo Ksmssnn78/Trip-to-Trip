@@ -60,12 +60,17 @@ const RegisterPage = () => {
                 </Row>
 
                 <Form.Group className="mb-3">
-                <FormControlLabel control={<Checkbox />} label="Yes, I agree with all terms & conditions" />
+                    <FormControlLabel control={<Checkbox />} label="Yes, I agree with all terms & conditions" />
                 </Form.Group>
 
                 <Form.Group id="btn">
                     <Button id="btn-submit" variant="contained">Register</Button>
                 </Form.Group>
+
+                <p id="sign-link">
+                    Already have an account?
+                    <a href='#SignIn'>SignIn here</a>
+                </p>
             </Form >
         </div >
     );
