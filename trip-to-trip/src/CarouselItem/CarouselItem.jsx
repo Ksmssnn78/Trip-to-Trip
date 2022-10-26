@@ -1,25 +1,22 @@
 import React from 'react';
 import './CarouselItem.css';
-import { useState } from 'react';
+// import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import logo from "../resources/Mount-Rushmore-National-Memorial-in-USA-HD-1920x1280.jpg"
 
 const CarouselItem = () => {
-    const [index, setIndex] = useState(0);
+    // const [index, setIndex] = useState(0);
     
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-        console.log(index);
-    };
+    // const handleSelect = (selectedIndex, e) => {
+    //     setIndex(selectedIndex);
+    //     console.log(index);
+    // };
     return (
         <div>
-            <Carousel id='slide-country' activeIndex={index} onSelect={handleSelect} >
+            {/* activeIndex={index} onSelect={handleSelect} */}
+            <Carousel id='slide-country'  >
             <Carousel.Item>
-                <img
-                className="img-block"
-                src={logo}
-                alt="First slide"
-                />
+                <img className="img-block" src={logo} alt="First slide"/>
                 <Carousel.Caption>
                 <h3>United States of America</h3>
                 <p>Nation of Freedom and opportunities.</p>
