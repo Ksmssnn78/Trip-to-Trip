@@ -20,7 +20,7 @@ body {
   box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
   text-align: center;
 }
-.reg-title{
+.reg-title {
   margin-top: 10px;
   margin-bottom: 20px;
   display: flex;
@@ -28,18 +28,24 @@ body {
   justify-content: center;
   color: rgb(170, 47, 228);
 }
-#outlined-username, #outlined-email, #outlined-address{
+#outlined-username,
+#outlined-email,
+#outlined-address {
   width: 410px;
 }
 #btn {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
-#btn-submit{
+#btn-submit {
   width: 200px;
   background-color: rgb(31, 32, 32);
+  display: flex;
+  justify-content: center;
 }
-#btn-submit:hover{
+#btn-submit:hover {
   background-color: rgb(140, 161, 255);
+}
+#sign-link{
+  margin: 10px;
 }
