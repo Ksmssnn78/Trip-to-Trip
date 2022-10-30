@@ -6,10 +6,11 @@ import Form from "react-bootstrap/Form";
 
 const SignIn = () => {
     return (
-        <div className="Container-signin">
-            <div id="sign-title">
-                <h1 className="display-6">Sign In</h1>
-            </div>
+        <div id='sign_in_body'>
+            <div className="Container-signin">
+                <div id="sign-title">
+                    <h1 className="display-6">Sign In</h1>
+                </div>
 
             <Form id="SignIn">
                 <Form.Group className="mb-3">
@@ -21,14 +22,14 @@ const SignIn = () => {
                     <TextField id="outlined-loguser" defaultValue="" size="small" label="Username" variant="outlined" />
                 </Form.Group>
 
-                <Form.Group className="mb-3">
-                    {/* <label>
-                        <i className="zmdi zmdi-email"></i>
-                    </label>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control className="email" id="email" placeholder="Enter your email"></Form.Control> */}
-                    <TextField id="outlined-logpass" defaultValue="" size="small" label="Password" variant="outlined" />
-                </Form.Group>
+                    <Form.Group className="mb-3">
+                        {/* <label>
+                            <i className="zmdi zmdi-email"></i>
+                        </label>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control className="email" id="email" placeholder="Enter your email"></Form.Control> */}
+                        <TextField id="outlined-logpass" defaultValue="" size="small" label="Password" variant="outlined" />
+                    </Form.Group>
 
                 <Form.Group id="btn">
                     <Button id="btn-signin" variant="contained">Sign In</Button>
@@ -39,6 +40,7 @@ const SignIn = () => {
                 </p>
             </Form >
         </div >
+        </div>
     );
 };
 

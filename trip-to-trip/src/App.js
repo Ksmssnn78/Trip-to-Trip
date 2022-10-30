@@ -14,6 +14,7 @@ import Home from './Home/Home';
 import Community from './Community/Community';
 import DiscoverPage from './DiscoverPage/DiscoverPage';
 import AboutUs from './AboutUs/AboutUs';
+import SpecialDeal from './SpecialDeal/SpecialDeal';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               <Route exact path="/Home" element={<Home/>}/>
               <Route exact path="/Discover" element={<DiscoverPage/>}/>
               <Route exact path='/Community' element={<Community/>}/>
-              <Route exact path='/SpecialDeal' element={<Home/>}/>
+              <Route exact path='/SpecialDeal' element={<SpecialDeal/>}/>
               <Route exact path='/AboutUs' element={<AboutUs/>}/>
               <Route exact path='/SignIn' element={<SignIn/>}/>
               <Route exact path='/Register' element={<Register/>}/>
