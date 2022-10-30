@@ -1,0 +1,24 @@
+.about-container {
+    text-align: center;
+    color:rgb(31, 32, 32);
+    padding-top: 140px;
+    padding-bottom: 126px;
+    background-image: url("../resources/Group_207.png");
+}
+
+.about-para {
+    padding: 25px;
+    text-align: justify;
+}
+
+.about-head {
+    color:rgb(31, 32, 32);
+
+}
+
+.footer {
+    color: white;
+    background-color: rgb(31, 32, 32);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

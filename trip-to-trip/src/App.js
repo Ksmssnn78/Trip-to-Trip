@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header/Header';
 import Register from './RegisterPage/RegisterPage';
 import SignIn from './SignIn/SignIn';
-import Test from './test/Test'
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -14,6 +13,7 @@ import {
 import Home from './Home/Home';
 import Community from './Community/Community';
 import DiscoverPage from './DiscoverPage/DiscoverPage';
+import AboutUs from './AboutUs/AboutUs';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
               <Route exact path="/Discover" element={<DiscoverPage/>}/>
               <Route exact path='/Community' element={<Community/>}/>
               <Route exact path='/SpecialDeal' element={<Home/>}/>
-              <Route exact path='/AboutUs' element={<Test/>}/>
+              <Route exact path='/AboutUs' element={<AboutUs/>}/>
               <Route exact path='/SignIn' element={<SignIn/>}/>
               <Route exact path='/Register' element={<Register/>}/>
               <Route exact path='/' element={<Home/>}/>
