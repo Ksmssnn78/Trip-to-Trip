@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#admin-bg {
+  background-image: url(../resources/Group_207.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#sidebar {
+  padding-top: 150px;
+  display: block;
+  height: 58rem;
+  justify-content: center;
+  background-color: white;
+}
+/* #sidebar-heading{
+    margin-top: 30px;
+    margin-bottom: 50px;
+} */
+#link-dash,
+#link-book,
+#link-cust,
+#link-deal,
+#link-review,
+#link-reg {
+  margin-bottom: 5px;
+  display: block;
+  padding: 15px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  text-align: left;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+#link-dash:hover,
+#link-book:hover,
+#link-cust:hover,
+#link-deal:hover,
+#link-review:hover,
+#link-reg:hover {
+  background-image: linear-gradient(
+    to right,
+    rgba(140, 161, 255, 0.5),
+    rgba(119, 40, 245, 0.5)
+  );
+  color: white;
+  transition: 0.3s;
+}
+#content {
+  height: 100%;
+}

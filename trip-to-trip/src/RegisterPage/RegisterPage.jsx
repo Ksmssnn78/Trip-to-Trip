@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
+import { Link } from 'react-router-dom';
 
 
 const RegisterPage = () => {
@@ -70,7 +71,7 @@ const RegisterPage = () => {
 
                     <p id="sign-link">
                         Already have an account?
-                        <a href='#SignIn'>SignIn here</a>
+                        <Link id="link-sign" to="/SignIn">Login here</Link>
                     </p>
                 </Form >
             </div >

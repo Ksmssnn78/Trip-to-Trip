@@ -15,6 +15,7 @@ import Community from './Community/Community';
 import DiscoverPage from './DiscoverPage/DiscoverPage';
 import AboutUs from './AboutUs/AboutUs';
 import SpecialDeal from './SpecialDeal/SpecialDeal';
+import Admin from './Admin/Admin';
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
               <Route exact path='/AboutUs' element={<AboutUs/>}/>
               <Route exact path='/SignIn' element={<SignIn/>}/>
               <Route exact path='/Register' element={<Register/>}/>
+              <Route exact path='/Admin' element={<Admin/>}/>
               <Route exact path='/' element={<Home/>}/>
+              
           </Routes>
         </Router>
     </div>
