@@ -48,9 +48,16 @@
 #btn-submit:hover {
   background-color: rgb(140, 161, 255);
 }
-#sign-link{
+#btn-submit:disabled{
+  background-color: lightgrey;
+  color: white;
+}
+#sign-link {
   margin: 10px;
 }
-#link-reg{
+#link-reg {
   margin-left: 5px;
+}
+#error {
+  color: red;
 }
