@@ -17,6 +17,7 @@ import SpecialDeal from './SpecialDeal/SpecialDeal';
 import Admin from './Admin/Admin';
 import Profile from './Profile/Profile';
 import { auth } from './Firebase/config';
+// import Booking from './BookingPage/BookingPage';
 
 function App() {
 
@@ -46,7 +47,6 @@ function App() {
           <Route exact path='/Admin' element={<Admin />} />
           <Route exact path='/Profile' element={<Profile name={userName}/>} />
           <Route exact path='/' element={<Home />} />
-
         </Routes>
       </Router>
     </div>
