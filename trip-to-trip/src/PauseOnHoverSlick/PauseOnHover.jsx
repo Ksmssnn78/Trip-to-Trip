@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
+import {useNavigate} from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import logo from '../resources/sun.jpg';
 import './PauseOnHover.css';
 
+
 const PauseOnHover = (props) => {
     
-
+    const navigate = useNavigate();
     useEffect(() => {
       if(props.active){
                 document.documentElement.style.setProperty('--display-shown-POH', 'hidden');
@@ -21,10 +23,19 @@ const PauseOnHover = (props) => {
     }, [props.active])
     
        
-    
-    // const handleClick = () =>{
-    //  
-    // }
+    const mouseDown_Coords = e => {
+      window.checkForDrag = e.clientX;
+    };
+
+    const clickOr_Drag = (e) => {
+      const mouseUp = e.clientX;
+      if (
+        mouseUp < window.checkForDrag + 6 &&
+        mouseUp > window.checkForDrag - 6
+      ) {
+        navigate('/booking');
+      }
+    };
  
      
 
@@ -50,8 +61,9 @@ const PauseOnHover = (props) => {
           </div>
         ))
       } */}
-      <div >
-        <img className='P_img' src={logo} alt="logo"/>
+      <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e)}>
+          <img className='P_img' src={logo} alt="logo"/>
+          <p>this is the one</p>
       </div>
       <div>
         <img className='P_img' src={logo} alt="logo"/>

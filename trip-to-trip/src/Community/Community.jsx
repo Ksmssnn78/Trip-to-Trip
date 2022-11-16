@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import VerticalModeSlick from '../VerticalModeSlick/VerticalModeSlick';
 
 
+
 const Community = () => {
     return (
         <div id="container">
@@ -41,7 +42,6 @@ const Community = () => {
                    <h1>what to add</h1>
                 </div>
             </div>
-                
         </div>
     );
 };
