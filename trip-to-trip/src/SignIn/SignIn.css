@@ -9,7 +9,7 @@
   width: 100vw;
 }
 .Container-signin {
-  width: 400px;
+  width: 25vw;
   height: 400px;
   position: absolute;
   top: 50%;
@@ -27,16 +27,16 @@
   margin-bottom: 30px;
   color: rgb(170, 47, 228);
 }
-#outlined-loguser,
+#outlined-logemail,
 #outlined-logpass {
-  width: 300px;
+  width: 15vw;
 }
 #btn {
   display: flex;
   justify-content: center;
 }
 #btn-signin {
-  width: 200px;
+  width: 10vw;
   background-color: rgb(31, 32, 32);
   margin-top: 10px;
 }
