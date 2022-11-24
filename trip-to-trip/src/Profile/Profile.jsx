@@ -7,9 +7,17 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ProfilePic from '../resources/001.jpg';
 import { auth } from '../Firebase/config';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 const Profile = (props) => {
+
+    const navigate = useNavigate();
+    const logout = async () => {
+        await signOut(auth);
+        navigate("/");
+    }
 
     return (
         <div id="Profile-Container">
@@ -56,7 +64,7 @@ const Profile = (props) => {
                             </Form.Group>
                             <Form.Group id="btn">
                                 <Button id="btn-update" variant="contained">Update</Button>
-                                <Button id="btn-logout" onClick="" variant="contained">Log Out</Button>
+                                <Button id="btn-logout" onClick={logout} variant="contained">Log Out</Button>
                             </Form.Group>
                         </Row>
                     </Row>

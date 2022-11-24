@@ -8,6 +8,7 @@
   height: 100vh;
   width: 100vw;
 }
+
 .Container {
   width: 500px;
   height: 600px;
@@ -22,6 +23,7 @@
   box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
   text-align: center;
 }
+
 .reg-title {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -30,34 +32,42 @@
   justify-content: center;
   color: rgb(170, 47, 228);
 }
+
 #outlined-username,
 #outlined-email,
 #outlined-address {
   width: 410px;
 }
+
 #btn {
   display: flex;
   justify-content: center;
 }
+
 #btn-submit {
-  width: 200px;
+  width: 10vw;
   background-color: rgb(31, 32, 32);
   display: flex;
   justify-content: center;
 }
+
 #btn-submit:hover {
   background-color: rgb(140, 161, 255);
 }
-#btn-submit:disabled{
+
+#btn-submit:disabled {
   background-color: lightgrey;
   color: white;
 }
+
 #sign-link {
   margin: 10px;
 }
+
 #link-reg {
   margin-left: 5px;
 }
+
 #error {
   color: red;
 }

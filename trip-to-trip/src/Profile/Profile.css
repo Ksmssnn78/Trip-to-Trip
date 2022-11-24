@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 #Profile-Container {
   background-image: url(../resources/Group_207.png);
   background-repeat: no-repeat;
@@ -11,6 +12,7 @@
   height: 100vh;
   width: 100vw;
 }
+
 #Container {
   width: 800px;
   height: auto;
@@ -27,6 +29,7 @@
   align-items: center;
   justify-content: center;
 }
+
 #prof-title {
   display: flex;
   margin-top: 10px;
@@ -36,32 +39,39 @@
   border-bottom: 2px solid rgb(170, 47, 228);
   text-align: center;
 }
+
 #profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 100%;
 }
+
 #username {
   font-size: 20px;
   font-weight: 500;
   color: rgb(170, 47, 228);
 }
+
 #email,
 #password,
 #address {
   width: 410px;
 }
+
 #btn {
   display: flex;
   justify-content: center;
 }
-#btn-update, #btn-logout {
+
+#btn-update,
+#btn-logout {
   width: 200px;
   background-color: rgb(170, 47, 228);
   display: flex;
   justify-content: center;
   margin: 10px;
 }
+
 #btn-update:hover {
   background-color: rgb(31, 32, 32);
 }

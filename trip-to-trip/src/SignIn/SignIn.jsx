@@ -49,7 +49,7 @@ const SignIn = () => {
                 <Form id="SignIn">
                     <Form.Group className="mb-3">
 
-                        <TextField id="outlined-loguser" onChange={(event) => setLogEmail((prev) => ({ ...prev, email: event.target.value }))} size="small" label="Username" variant="outlined" />
+                        <TextField id="outlined-logemail" onChange={(event) => setLogEmail((prev) => ({ ...prev, email: event.target.value }))} size="small" label="Email" variant="outlined" />
                     </Form.Group>
 
                     <Form.Group className="mb-3">

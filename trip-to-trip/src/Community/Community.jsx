@@ -11,7 +11,7 @@ const Community = () => {
             <div id="first">
                 <div id="profile">
                     <div id="image">
-                        <img src="../resources/Home.png" alt=""/>
+                        <img src="../resources/Home.png" alt="" />
                     </div>
                     <div id="profile-name">
                         <p>
@@ -30,16 +30,16 @@ const Community = () => {
             </div>
             <div id="second">
                 <div id="create-post">
-                     <TextField id="outlined-loguser" size="small" label="What's New?" variant="outlined"/>
-                     <button className="button">Post it</button>
+                    <TextField id="outlined-loguser" size="small" label="What's New?" variant="outlined" />
+                    <button id="btn-post">Post it</button>
                 </div>
                 <div id="post">
-                    <VerticalModeSlick/>
+                    <VerticalModeSlick />
                 </div>
             </div>
             <div id="third">
                 <div id="new-page">
-                   <h1>what to add</h1>
+                    <h1>what to add</h1>
                 </div>
             </div>
         </div>
