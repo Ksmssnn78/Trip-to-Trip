@@ -42,15 +42,15 @@ const CenterModeSlick = (props) => {
             mouseUp > window.checkForDrag - 6
           ) {
             // console.log(e.currentTarget.children[0]);
-            console.log(item);
+            // console.log(item);
             if(getComputedStyle(document.documentElement).getPropertyValue('--display-shown-CMS') === 'visible'){
               document.documentElement.style.setProperty('--display-shown-CMS', 'hidden');
               document.documentElement.style.setProperty('--image-height-CMS', '0rem' );
-              props.isActive(false,topimages);
+              props.isActive(false,item);
             }else{
               document.documentElement.style.setProperty('--display-shown-CMS', 'visible');
               document.documentElement.style.setProperty('--image-height-CMS', '18rem' );
-              props.isActive(true,topimages);
+              props.isActive(true,item);
             }
           }
         };

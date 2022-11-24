@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Booking-page-main{
+    position: relative;
+   padding: 10rem;
+    /* border: 1px solid red; */
+    height: 100vh;
+    width: 100vw;
+}
+.Booking-page-form{
+    background-color:white;
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 4px 4px 4px rgb(210, 217, 252),
+    -4px 4px 8px rgb(243, 207, 207);  */
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.123);
+}
+.common-div-booking{
+   /* border: 1px solid red ; */
+   display: flex;
+   flex-direction: row;
+}
+.mb-booking{
+    /* border: 1px solid black; */
+    padding: 1rem;
+    flex-basis: 50%;
+}
+.mb-booking :only-child{
+    width: 100%;
+}

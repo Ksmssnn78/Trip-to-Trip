@@ -1,15 +1,29 @@
-import React, { useEffect } from "react";
-import {useNavigate} from 'react-router-dom';
+import React, { useEffect,useState } from "react";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import logo from '../resources/sun.jpg';
 import './PauseOnHover.css';
+import { useNavigate } from "react-router-dom";
 
 
 const PauseOnHover = (props) => {
-    
-    const navigate = useNavigate();
+
+  const navigate = useNavigate();
+
+  const [sdata, setsdata] = useState([]);
+  
+  const getDetails = async()=>{
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    setsdata(data);
+  }
+
+  useEffect(() => {
+     getDetails();
+  }, [])
+   
     useEffect(() => {
       if(props.active){
                 document.documentElement.style.setProperty('--display-shown-POH', 'hidden');
@@ -27,13 +41,15 @@ const PauseOnHover = (props) => {
       window.checkForDrag = e.clientX;
     };
 
-    const clickOr_Drag = (e) => {
+    const clickOr_Drag = (e,item) => {
       const mouseUp = e.clientX;
       if (
         mouseUp < window.checkForDrag + 6 &&
         mouseUp > window.checkForDrag - 6
       ) {
-        navigate('/booking');
+        props.select_Data(item);
+        navigate('/Booking');
+
       }
     };
  
@@ -47,7 +63,7 @@ const PauseOnHover = (props) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
     pauseOnHover: true
   };
   return (
@@ -61,10 +77,15 @@ const PauseOnHover = (props) => {
           </div>
         ))
       } */}
-      <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e)}>
-          <img className='P_img' src={logo} alt="logo"/>
-          <p>this is the one</p>
-      </div>
+      {
+        sdata.length > 0 && sdata.map( (data) =>(
+          <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e,data.email)} key={data.id}>
+            <img className='P_img' src={logo} alt="logo"/>
+            <p>{data.email}</p>
+          </div>
+        ) )
+      }
+      {/* 
       <div>
         <img className='P_img' src={logo} alt="logo"/>
       </div>
@@ -82,7 +103,7 @@ const PauseOnHover = (props) => {
       </div>
       <div>
         <img className='P_img' src={logo} alt="logo"/>
-      </div>
+      </div> */}
     </Slider>
   </div>
   );
