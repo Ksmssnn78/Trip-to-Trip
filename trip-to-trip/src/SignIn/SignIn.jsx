@@ -30,7 +30,7 @@ const SignIn = () => {
                 await updateProfile(user, {
                     displayName: logEmail.email,
                 });
-                navigate("/Profile");
+                navigate("/Home");
             })
             .catch((err) => {
                 setErrorMsg(err.message);

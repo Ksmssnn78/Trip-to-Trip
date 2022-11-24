@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../Firebase/config';
+import axios from 'axios';
 
 
 const RegisterPage = () => {
@@ -29,6 +30,7 @@ const RegisterPage = () => {
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
     const handleSubmission = () => {
+        var authErr = "";
         if (!regEmail.username || !regEmail.email || !regEmail.fname || !regEmail.lname || !regEmail.password || !regEmail.conpass || !regEmail.address || !regEmail.city || !regEmail.state) {
             setErrorMsg("Fill all fields");
             return;
@@ -43,12 +45,23 @@ const RegisterPage = () => {
                 await updateProfile(user, {
                     displayName: regEmail.username,
                 });
-                navigate("/");
+                navigate("/SignIn");
             })
             .catch((err) => {
+                authErr = err.message;
+                console.log(authErr);
                 setSubmitButtonDisabled(false);
                 setErrorMsg(err.message);
             });
+        if (authErr === "") {
+            axios.post('http://localhost:5000/Register/postData', regEmail).then(respose => {
+                console.log(respose)
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+
+
     }
 
     return (
@@ -57,7 +70,7 @@ const RegisterPage = () => {
                 <div className="reg-title">
                     <h1 className="display-6">Register</h1>
                 </div>
-                <Form className="Register" action="/registeruser" method="post" enctype="multipart/form-data">
+                <Form className="Register" action="/registeruser" method="post">
                     <Form.Group className="mb-3">
                         <TextField id="outlined-username" onChange={(event) => setRegEmail((prev) => ({ ...prev, username: event.target.value }))} value={regEmail.username} size="small" label="Username" variant="outlined" />
                     </Form.Group>
