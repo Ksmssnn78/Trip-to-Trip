@@ -32,35 +32,35 @@ const Profile = (props) => {
                                 <img id="profile-pic" src={ProfilePic} alt=""></img>
                             </Form.Group>
                             <Form.Group className="mb-1">
-                                <label id="username" size="small">{props.name ? `#${props.name}` : "Login please"}</label>
+                                <label id="username" size="small">#{props.name}</label>
                             </Form.Group>
                         </Form.Group>
 
                         <Row className="mb-3" as={Col}>
                             <Form.Group className="mb-3">
-                                <label id="email" size="small" value="">{auth.currentUser.email}</label>
+                                <label id="email" size="small">{auth.currentUser.email}</label>
                                 {/* <label id="email" size="small" value="">{props.email ? `${props.email}` : ""}</label> */}
                                 {/* <TextField id="email" value={props.email ? `${props.email}` : ""} size="small" label="Email" variant="outlined" /> */}
                             </Form.Group>
                             <Form.Group as={Col}>
-                                <TextField id="fname" defaultValue="" size="small" label="First Name" variant="outlined" />
+                                <TextField id="fname" size="small" label="First Name" variant="outlined" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" as={Col}>
-                                <TextField id="lname" defaultValue="" size="small" label="Last Name" variant="outlined" />
+                                <TextField id="lname" size="small" label="Last Name" variant="outlined" />
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <TextField id="password" defaultValue="" size="small" label="Password" variant="outlined" />
+                                <TextField id="password" size="small" label="Password" variant="outlined" />
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <TextField id="address" defaultValue="" size="small" label="Address" variant="outlined" />
+                                <TextField id="address" size="small" label="Address" variant="outlined" />
                             </Form.Group>
                             <Form.Group as={Col}>
-                                <TextField id="city" defaultValue="" size="small" label="City" variant="outlined" />
+                                <TextField id="city" size="small" label="City" variant="outlined" />
                             </Form.Group>
 
                             <Form.Group as={Col} className="mb-3">
-                                <TextField id="state" defaultValue="" size="small" label="State" variant="outlined" />
+                                <TextField id="state" size="small" label="State" variant="outlined" />
                             </Form.Group>
                             <Form.Group id="btn">
                                 <Button id="btn-update" variant="contained">Update</Button>
