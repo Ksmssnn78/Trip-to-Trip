@@ -2,7 +2,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 
 const url = "mongodb+srv://"+process.env.user+":"+process.env.mongopass+"@cluster0.plphx1t.mongodb.net/?retryWrites=true&w=majority";
-console.log(url)
+// console.log(url)
 let ress = [];
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
