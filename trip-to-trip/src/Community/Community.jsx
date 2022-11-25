@@ -39,7 +39,7 @@ const Community = () => {
             </div>
             <div id="third">
                 <div id="new-page">
-                    <h1>what to add</h1>
+                    <h1>something new is coming</h1>
                 </div>
             </div>
         </div>
