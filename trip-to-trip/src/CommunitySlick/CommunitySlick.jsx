@@ -92,7 +92,7 @@ export default class VerticalMode extends Component {
                     </div>
                     <div id="p-photos">
                         <div id="ed-photo">
-                           <img src="../resources/Home.png" alt="" />
+                            <img src="../resources/Home.png" alt="" />
                             photo
                         </div>
                     </div>
