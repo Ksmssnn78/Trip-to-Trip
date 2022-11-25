@@ -1,8 +1,8 @@
 import React from 'react';
 import './Community.css'
 import TextField from '@mui/material/TextField';
-import VerticalModeSlick from '../VerticalModeSlick/VerticalModeSlick';
-
+import CommunitySlick from '../CommunitySlick/CommunitySlick';
+import Form from "react-bootstrap/Form";
 
 
 const Community = () => {
@@ -29,12 +29,12 @@ const Community = () => {
                 </div>
             </div>
             <div id="second">
-                <div id="create-post">
+                <Form id="create-post">
                     <TextField id="outlined-loguser" size="small" label="What's New?" variant="outlined" />
                     <button id="btn-post">Post it</button>
-                </div>
+                </Form>
                 <div id="post">
-                    <VerticalModeSlick />
+                    <CommunitySlick />
                 </div>
             </div>
             <div id="third">
