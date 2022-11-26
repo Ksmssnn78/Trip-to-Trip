@@ -71,39 +71,47 @@ export default class VerticalMode extends Component {
     return (
 
       <div id="community_main">
-       
-          <Slider {...settings} ref={slider => this.slider = slider}>
-            {this.state.posts.map((post) => (
-              <div className="CM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e)} onMouseUp={e => this.click_Or_Drag(e)} key={post.id}>
-                    <div id="p-profile">
-                        <div id="pic">
-                            <img src="../resources/Home.png" alt="" />
-                        </div>
-                        <div id="profile-name">
-                            <p>
-                                <b>Tonmoy Roy</b>
-                            </p>
-                        </div>
-                    </div>
-                    <div id="txt">
-                      <div id="p-txt">
-                          <p>hello</p>
-                      </div>
-                    </div>
-                    <div id="p-photos">
-                        <div id="ed-photo">
-                            <img src="../resources/Home.png" alt="" />
-                            photo
-                        </div>
-                    </div>
-
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <Slider {...settings} ref={slider => this.slider = slider}>
+          {this.state.posts.map((post) => (
+            <div className="CM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e)} onMouseUp={e => this.click_Or_Drag(e)} key={post.id}>
+              <div id="p-profile">
+                <div id="pic">
+                  <img src="../resources/Home.png" alt="" />
+                </div>
+                <div id="profile-name">
+                  <p>
+                    <b>Tonmoy Roy</b>
+                  </p>
+                </div>
               </div>
-            ))}
-            {/* <div onClick={() => {this.handleClickSlide() }}>
+              <div id="txt">
+                <div id="p-txt">
+                  <p>the quick brown fox jumps right over a lazy dog</p>
+                </div>
+              </div>
+              <div id="p-photos">
+                <div id="ed-photo">
+                  <img src="../resources/Home.png" alt="" />
+                  photo
+                </div>
+              </div>
+              <div class="wrapper">
+                <div class="like">
+                  <p><b>Like</b></p>
+                  <i onclick="count()" class="fas fa-heart icon"></i>
+                  <input id="likeCount" type="number" value="0"></input>
+                </div>
+              </div>
+              <script type="text/javascript" src="app.js"></script>
+            </div>
+
+          ))}
+          {/* <div onClick={() => {this.handleClickSlide() }}>
             <img className="v_img" src={logo} alt="logo 1"></img>
             </div>
           */}
-          </Slider>
+        </Slider>
       </div>
     );
   }

@@ -32,7 +32,6 @@
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
-    background-color: green;
 }
 #p-txt{
     text-align: left;
@@ -44,3 +43,60 @@
     background-color: brown;
     height:150px;
 }
+.wrapper{
+    width: 60px;
+    height:40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 2fr;
+    background: #3accfd;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+  }
+  .like{
+    display:grid;
+    place-items : center;
+  }
+  .icon{
+    margin-top: 37px;
+    color: #000000;
+    cursor: pointer;
+    transition: .5s;
+  }
+  .icon:hover{
+    color: #ba0015;
+    transform: scale(1.2);
+  }
+  input{
+    margin-top: -100px;
+    margin-left: 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    background: none;
+    font-size: 15px;
+    font-weight: 700;
+    pointer-events: none;
+    color: black;
+    text-shadow: 2px 2px 3px #2a93b6;
+  }
+  button{
+    background: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ececec;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 35px;
+    transition: 0.5s;
+    box-shadow: 12px 12px 24px #2a93b6,
+                -12px -12px 24px #4affff;
+  }
+  button:hover{
+    background: red;
+    transform: scale(1.05);
+  }
+  
