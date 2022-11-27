@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
 const username = process.env.user;
 const pass = process.env.mongopass;
 const url = "mongodb+srv://"+username+":"+pass+"@cluster0.plphx1t.mongodb.net/?retryWrites=true&w=majority";
-
+app.use(express.static(path.join(__dirname, '/')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
