@@ -6,11 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require("fs-extra");
 const multer = require("multer");
 const path = require('path');
-<<<<<<< HEAD
 
-=======
-app.use(express.static(path.join(__dirname, '/')));
->>>>>>> ashraf
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
@@ -20,7 +16,7 @@ app.use(function(req, res, next) {
 const username = process.env.user;
 const pass = process.env.mongopass;
 const url = "mongodb+srv://"+username+":"+pass+"@cluster0.plphx1t.mongodb.net/?retryWrites=true&w=majority";
-
+app.use(express.static(path.join(__dirname, '/')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 

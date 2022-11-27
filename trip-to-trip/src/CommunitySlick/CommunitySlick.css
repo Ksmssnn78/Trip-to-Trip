@@ -67,7 +67,7 @@
     color: #ba0015;
     transform: scale(1.2);
   }
-  input{
+  #likeCount{
     margin-top: -100px;
     margin-left: 15px;
     width: 100%;
@@ -81,7 +81,7 @@
     color: black;
     text-shadow: 2px 2px 3px #2a93b6;
   }
-  button{
+  /* button{
     background: black;
     border: none;
     outline: none;
@@ -98,5 +98,5 @@
   button:hover{
     background: red;
     transform: scale(1.05);
-  }
+  } */
   
