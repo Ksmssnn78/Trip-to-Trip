@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require("fs-extra");
 const multer = require("multer");
 const path = require('path');
-
+app.use(express.static(path.join(__dirname, '/')));
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
