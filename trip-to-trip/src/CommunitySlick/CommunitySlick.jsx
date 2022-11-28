@@ -86,24 +86,17 @@ export default class VerticalMode extends Component {
                 </div>
               </div>
               <div id="txt">
-                <div id="p-txt">
                   <p>the quick brown fox jumps right over a lazy dog</p>
-                </div>
               </div>
-              <div id="p-photos">
                 <div id="ed-photo">
                   <img src="../resources/Home.png" alt="" />
                   photo
                 </div>
+              <div id="dsin">
+                  <p><span class="taab"><b>Like</b></span>
+                  <span class="tab"><b>Comment</b></span>
+                  <span class="ttab"><b>Share</b></span></p>
               </div>
-              <div class="wrapper">
-                <div class="like">
-                  <p><b>Like</b></p>
-                  <i onclick="count()" class="fas fa-heart icon"></i>
-                  <input id="likeCount" type="number" value="0"></input>
-                </div>
-              </div>
-              <script type="text/javascript" src="app.js"></script>
             </div>
 
           ))}
