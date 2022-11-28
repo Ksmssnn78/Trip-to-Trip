@@ -1,3 +1,76 @@
-#container{
-    background-color: aqua;
+#admin-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../resources/Group_207.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(205, 235, 255);
+  /* position: fixed; */
+  text-align: center;
+  font-family: "Poppins";
+  text-transform: uppercase;
+}
+#ad-head{
+    padding: 10px;
+    margin-top: 50px;
+}
+#admin-1st {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#admin-2nd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#CNT-Country,
+#CNT-Spot,
+#CNT-Post,
+#CNT-Hotel {
+  margin: 10px;
+  height: 300px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
+}
+#CNT-User {
+  margin: 10px;
+  height: 530px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
+}
+#CNT-Location,
+#CNT-Flight {
+  margin: 10px;
+  height: 350px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
+}
+.plc {
+  width: 200px;
+  height: 12px;
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid hsla(0, 0%, 0%, 0.164);
+  border-radius: 5px;
+}
+#btn-ad {
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(34, 34, 34);
+  border: none;
+  border-radius: 5px;
+  color: white;
 }

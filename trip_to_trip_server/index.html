@@ -1,94 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
-    <h1>this is test to read data from website and save it on mongobd</h1>
-    <h1>add country: </h1>
-    <form action="/addcountry" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="country name" name="name">
-        <input type="text" placeholder="level" name="level">
-        <input type="text" placeholder="quote" name="quote">
-        <input type="file"  placeholder="upload" name="file">
-        <button type="submit">add country</button>
-    </form>
-    <h1>add user: </h1>
+  </head>
 
-    <form id="container" action="/adduser" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="username" name="username" required>
-        <input type="email" placeholder="email" name="email" required>
-        <input type="text" placeholder="first name" name="fname" required>
-        <input type="text" placeholder="last name" name="lname" required>
-        <input type="text" placeholder="address" name="address" required>
-        <input type="text" placeholder="city" name="city" required>
-        <input type="text" placeholder="state" name="state" required>
-        <input type="text" placeholder="status" name="status" required>
-        <input type="file"  placeholder="upload" name="file">
-        <button type="submit">add user</button>
-    </form>
-    <h1>add location: </h1>
-    <form action="/addlocation" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="location" name="loc_name" required>
-        <input type="text" placeholder="country" name="c_name" required>
-        <input type="text" placeholder="tourist spot" name="t_spot" required>
-        <input type="text" placeholder="things to do" name="advanture" required>
-        <input type="file"  placeholder="upload" name="file">
-        <button type="submit">add location</button>
-    </form>
-    <h1>add spot: </h1>
-    <form action="/addspot" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="spot name" name="spot_name" required>
-        <input type="text" placeholder="location" name="loc_name" required>
-        <input type="text" placeholder="country" name="c_name" required>
-        <input type="file"  placeholder="upload" name="file">
-        <button type="submit">add spot</button>
-    </form>
-    <h1>add post: </h1>
-    <form action="/addpost" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="heading" name="heading" required>
-        <input type="email" placeholder="email" name="email" required>
-        <input type="text" placeholder="description" name="description" required>
-        <input type="file"  placeholder="upload" name="file">
-        <button type="submit">add post</button>
-    </form>
-    <h1>add hotel: </h1>
-    <form action="/addhotel" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="hotel name" name="hotel" required>
-        <input type="text" placeholder="spot name" name="location" required>
-        <input type="number" placeholder="review" name="review" required>
-        <input type="file"  placeholder="upload" name="file">
-        <button type="submit">add hotel</button>
-    </form>
-    <h1>add flight: </h1>
-    <form action="/addflight" method="post">
-        <input type="text" placeholder="flight name" name="flight" required>
-        <input type="text" placeholder="flight code" name="flightcode" required>
-        <input type="text" placeholder="start dest" name="start_destination" required>
-        <input type="text" placeholder="end dest" name="end_destination" required>
-        <button type="submit">add flight</button>
-    </form>
-    <div id="countries">
-
+  <body id="admin-container">
+    <div id="ad-head">
+      <h1>This is test to read data from website and save it on mongobd</h1>
     </div>
-    
-    <script>
-        fetch('/home').then(res => res.json()).then(info =>{
+
+    <div id="admin-1st">
+      <div id="CNT-Spot">
+        <h4 id="head-spot">Add spot</h4>
+        <form action="/addspot" method="post" enctype="multipart/form-data">
+          <input
+            class="plc"
+            type="text"
+            placeholder="spot name"
+            name="spot_name"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="location"
+            name="loc_name"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="country"
+            name="c_name"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add spot</button>
+        </form>
+      </div>
+
+      <div id="CNT-Post">
+        <h4 id="head-post">Add post</h4>
+        <form action="/addpost" method="post" enctype="multipart/form-data">
+          <input
+            class="plc"
+            type="text"
+            placeholder="heading"
+            name="heading"
+            required
+          />
+          <input
+            class="plc"
+            type="email"
+            placeholder="email"
+            name="email"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="description"
+            name="description"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add post</button>
+        </form>
+      </div>
+
+      <div id="CNT-Hotel">
+        <h4 id="head-hotel">Add hotel</h4>
+        <form action="/addhotel" method="post" enctype="multipart/form-data">
+          <input
+            class="plc"
+            type="text"
+            placeholder="hotel name"
+            name="hotel"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="spot name"
+            name="location"
+            required
+          />
+          <input
+            class="plc"
+            type="number"
+            placeholder="review"
+            name="review"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add hotel</button>
+        </form>
+      </div>
+
+      <!-- <div id="CNT-Flight">
+        <h4 id="head-flight">Add flight</h4>
+        <form action="/addflight" method="post">
+          <input
+            class="plc"
+            type="text"
+            placeholder="flight name"
+            name="flight"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="flight code"
+            name="flightcode"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="start dest"
+            name="start_destination"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="end dest"
+            name="end_destination"
+            required
+          />
+          <button id="btn-ad" type="submit">add flight</button>
+        </form>
+      </div> -->
+      <div id="CNT-Country">
+        <h4 id="head-country">Add country</h4>
+        <form action="/addcountry" method="post" enctype="multipart/form-data">
+          <input
+            class="plc"
+            type="text"
+            placeholder="country name"
+            name="name"
+          />
+          <input class="plc" type="text" placeholder="level" name="level" />
+          <input class="plc" type="text" placeholder="quote" name="quote" />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add country</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="admin-2nd">
+      <div id="CNT-Flight">
+        <h4 id="head-flight">Add flight</h4>
+        <form action="/addflight" method="post">
+          <input
+            class="plc"
+            type="text"
+            placeholder="flight name"
+            name="flight"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="flight code"
+            name="flightcode"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="start dest"
+            name="start_destination"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="end dest"
+            name="end_destination"
+            required
+          />
+          <button id="btn-ad" type="submit">Add flight</button>
+        </form>
+      </div>
+
+      <div id="CNT-User">
+        <h4 id="head-user">Add user</h4>
+        <form
+          id="container"
+          action="/adduser"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input
+            class="plc"
+            type="text"
+            placeholder="username"
+            name="username"
+            required
+          />
+          <input
+            class="plc"
+            type="email"
+            placeholder="email"
+            name="email"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="first name"
+            name="fname"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="last name"
+            name="lname"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="address"
+            name="address"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="city"
+            name="city"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="state"
+            name="state"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="status"
+            name="status"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add user</button>
+        </form>
+      </div>
+
+      <div id="CNT-Location">
+        <h4 id="head-location">Add location</h4>
+        <form action="/addlocation" method="post" enctype="multipart/form-data">
+          <input
+            class="plc"
+            type="text"
+            placeholder="location"
+            name="loc_name"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="country"
+            name="c_name"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="tourist spot"
+            name="t_spot"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="things to do"
+            name="advanture"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add location</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="countries"></div>
+
+    <div id="backS">
+      <script>
+        fetch("/home")
+          .then((res) => res.json())
+          .then((info) => {
             console.log(info);
             const countries = document.getElementById("countries");
-            info.forEach(element => {
-                const h3 = document.createElement('h3');
-                const p = document.createElement('p');
-                h3.innerHTML = element.c_name;
-                countries.appendChild(h3);
-                p.innerHTML = "<strong>level:</strong>" + element.level + "<br> quote:" + element.quote;
-                countries.appendChild(p);
+            info.forEach((element) => {
+              const h3 = document.createElement("h3");
+              const p = document.createElement("p");
+              h3.innerHTML = element.c_name;
+              countries.appendChild(h3);
+              p.innerHTML =
+                "<strong>level:</strong>" +
+                element.level +
+                "<br> quote:" +
+                element.quote;
+              countries.appendChild(p);
             });
-        })
-    </script>
-</body>
+          });
+      </script>
+    </div>
+  </body>
 </html>
