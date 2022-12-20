@@ -1,9 +1,9 @@
 const express = require('express');
 
 const { Router } = require("express");
-const  home  = require('../controllers/home.js');
+const  countries  = require('../controllers/country_info.js');
 const router = Router();
 
-router.get('/',home.hello)
+router.get('/',countries.countries)
 
 module.exports = router;

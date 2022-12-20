@@ -6,8 +6,8 @@ const url = "mongodb+srv://"+process.env.user+":"+process.env.mongopass+"@cluste
 let user_res = [];
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    let dbo = db.db("test_database");
-    dbo.collection("country_information").find({}).toArray(function(err, result) {
+    let dbo = db.db("trip_to_trip");
+    dbo.collection("userdata").find({}).toArray(function(err, result) {
         if (err) throw err;
         // console.log(result);
         user_res = result;

@@ -24,9 +24,15 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/index.html')
 })
 
+/// getting data from data base
 
-const home = require('./routers/home')
-app.use('/home',home)
+/// countries information
+const country_data = require('./routers/country_info')
+app.use('/countries',country_data)
+/// user information
+const user_data = require('./routers/user')
+app.use('/user',user_data)
+
 
 
 
@@ -42,7 +48,7 @@ const Storage = multer.diskStorage({
                                 .toLowerCase()
                                 .split(" ")
                                 .join("-") + '-' + Date.now();
-        if(fileExt == '.jpeg' || fileExt == '.png' || fileExt == ".jpg" ){
+        if(fileExt == '.jpeg' || fileExt == '.png' || fileExt == ".jpg" || fileExt == ".webp" ){
             cb(null,fileName+fileExt);
         }else{
             cb(null,fileName+'.jpg');
@@ -55,11 +61,11 @@ const upload = multer({
     fileFilter:(req,file,cb)=>{
         // console.log(file);
         if(
-            file.mimetype == 'image/png' || file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg'
+            file.mimetype == 'image/png' || file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/webp'
         ){
             cb(null,true);
         }else{
-            cb(new Error('only .png, .jpg, .jpeg formet allowed!'))
+            cb(new Error('only .png, .jpg, .jpeg .webp formet allowed!'))
         }
     }
 });
@@ -365,27 +371,12 @@ MongoClient.connect(url, function(err, db) {
     var dbo = db.db("trip_to_trip");
     app.post('/addflight',upload.single("file"), (req, ress) => {
         const flight_info = req.body;
-        const flight_img = req.file;
-        console.log(flight_img);
-        if (typeof flight_img == 'undefined') {
-            var finalImg = {}
-        }
-        else{
-            const newImg = fs.readFileSync('./uploads/'+flight_img.filename);
-            const encImg = newImg.toString('base64');
-            var finalImg={
-            name:flight_img.filename,
-            contentType: flight_img.mimetype,
-            size: flight_img.size,
-            image: Buffer(encImg,"base64")
-            };
-        }
-            var myobj = {
+        var myobj = {
                 flight: flight_info.flight,
-                flightCode: flight_info.flightCode,
+                flightCode: flight_info.f_code,
                 startDestination: flight_info.start_destination,
                 endDestination: flight_info.end_destination
-            };
+        };
         console.log(myobj);
         dbo.collection("flight_information").insertOne(myobj, function(err, res) {
         if (err) throw err;
