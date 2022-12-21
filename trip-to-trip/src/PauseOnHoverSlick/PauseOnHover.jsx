@@ -3,7 +3,6 @@ import React, { useEffect,useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import logo from '../resources/sun.jpg';
 import './PauseOnHover.css';
 import { useNavigate } from "react-router-dom";
 
@@ -13,17 +12,28 @@ const PauseOnHover = (props) => {
   const navigate = useNavigate();
 
   const [sdata, setsdata] = useState([]);
-  
+  const [filtered_Data,setFilteredData] = useState([]);
+
+  const filter = (co_name) =>{
+      console.log(co_name);
+      console.log(sdata);
+      let datafilter = sdata.filter(data => data.country == co_name);
+      console.log(datafilter);
+      setFilteredData(datafilter);
+    }
+
   const getDetails = async()=>{
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const response = await fetch('http://localhost:5000/locations');
     const data = await response.json();
     setsdata(data);
   }
+  
 
-  useEffect(() => {
-     getDetails();
-  }, [])
-   
+    useEffect(() => {
+      getDetails();
+    }, [])
+
+  
     useEffect(() => {
       if(props.active){
                 document.documentElement.style.setProperty('--display-shown-POH', 'hidden');
@@ -34,27 +44,31 @@ const PauseOnHover = (props) => {
                 document.documentElement.style.setProperty('--image-height-POH', '15rem' );
                 document.documentElement.style.setProperty('--title-width-POH', '15rem' );
               }
-    }, [props.active])
+              filter(props.country_name);
+    }, [props.active,props.country_name])
     
-       
+    
+  //   if(datafilter.length === 0){
+  //     datafilter = sdata;
+  //     console.log("no data!")
+  // }
+
     const mouseDown_Coords = e => {
       window.checkForDrag = e.clientX;
     };
 
-    const clickOr_Drag = (e,item) => {
+    const clickOr_Drag = (e,selected_loc) => {
       const mouseUp = e.clientX;
       if (
         mouseUp < window.checkForDrag + 6 &&
         mouseUp > window.checkForDrag - 6
       ) {
-        props.select_Data(item);
-        navigate('/Booking');
+        props.select_Data(selected_loc);
+        navigate('/DetailedLocation');
 
       }
     };
  
-     
-
 
   var settings = {
     // dots: true,
@@ -68,7 +82,7 @@ const PauseOnHover = (props) => {
   };
   return (
     <div id="pause-main">
-    <h3 id="POH-title">Pause On Hover</h3>
+    <h3 id="POH-title">Select A Location : </h3>
     <Slider {...settings} arrows={false}>
       {/* {
         props.timages.length > 0 && props.timages.map((x) => (
@@ -78,32 +92,14 @@ const PauseOnHover = (props) => {
         ))
       } */}
       {
-        sdata.length > 0 && sdata.map( (data) =>(
-          <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e,data.email)} key={data.id}>
-            <img className='P_img' src={logo} alt="logo"/>
-            <p>{data.email}</p>
+        filtered_Data.length > 0 && filtered_Data.map( (data) =>(
+          <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e,data?.location)} key={data?._id}>
+            <img className='P_img' src={"data:image/jpeg;base64," + data?.imageinfo.image} alt="logo"/>
+            <p>{data?.location}</p>
           </div>
         ) )
       }
-      {/* 
-      <div>
-        <img className='P_img' src={logo} alt="logo"/>
-      </div>
-      <div>
-        <img className='P_img' src={logo} alt="logo"/>
-      </div>
-      <div>
-        <img className='P_img' src={logo} alt="logo"/>
-      </div>
-      <div>
-        <img className='P_img' src={logo} alt="logo"/>
-      </div>
-      <div>
-        <img className='P_img' src={logo} alt="logo"/>
-      </div>
-      <div>
-        <img className='P_img' src={logo} alt="logo"/>
-      </div> */}
+     
     </Slider>
   </div>
   );

@@ -18,14 +18,14 @@
     width: 90%;
     /* border: 1px solid blue; */
     margin: auto;
-    top: 10rem;
+    top: 12rem;
     position: relative;
    
 }
 #POH-title{
     visibility: var(--display-shown-POH);
     width: var(--title-width-POH);
-    transition: 2s;
+    transition: 1s;
     overflow: hidden;
     height: 2rem;
 }

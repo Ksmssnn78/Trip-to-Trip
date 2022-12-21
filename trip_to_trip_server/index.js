@@ -32,7 +32,21 @@ app.use('/countries',country_data)
 /// user information
 const user_data = require('./routers/user')
 app.use('/user',user_data)
-
+/// location information
+const location_data = require('./routers/location_info')
+app.use('/locations',location_data)
+/// flight information
+const flight_data = require('./routers/flight_info')
+app.use('/flights_info',flight_data)
+/// hotel information
+const spot_data = require('./routers/spot_location')
+app.use('/spot_info',spot_data)
+/// hotel information
+const hotel_data = require('./routers/hotel_info')
+app.use('/hotels_info',hotel_data)
+/// post_info information
+const post_data = require('./routers/post_info')
+app.use('/post_info',post_data)
 
 
 

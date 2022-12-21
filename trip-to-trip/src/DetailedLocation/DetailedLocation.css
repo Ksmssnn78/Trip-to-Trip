@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+#DetailedLoc_parents{
+    background-image: url("../resources/Group_207.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    height: 100vh;
+    width: 100%;
+}
+#DetailedLoc_main_div{
+    position: absolute;
+    height: 75vh;
+    width: 80%;
+    margin: 10%;
+    margin-top: 7%;
+    overflow: scroll;
+    border-radius: 20px;
+}
+
+#DetailedLoc_main_div::-webkit-scrollbar {
+    display: none;
+  }
+
+.DL_single_loc_display{
+    width: 48%;
+    padding: 1rem;
+    margin: 2px;
+    border-radius: 20px;
+    text-align: center;
+    float: left;
+}
+.DL_Location_imgs{
+    width: 100%;
+    height: 50vh;
+    border-radius: 20px;
+}
+.DL_Location_name{
+    color: rgb(241, 119, 48);
+    font-size: 2rem;
+    margin-top: -3rem;
+}
+
+#DL_book_btn{
+    width: 100%;
+    height: auto;
+    justify-items: center;
+    position: absolute;
+    bottom: 2rem;
+}
+#DL_submit_btn{
+    margin: auto;
+    width: 10vw;
+    background-color: rgb(31, 32, 32);
+    color: aliceblue;
+    height: 3rem;
+    border-radius: 10px;
+    margin-left: 45%;
+    border: 0px;
+}
+#DL_submit_btn:hover{
+    background-color: rgb(241, 119, 48);
+}

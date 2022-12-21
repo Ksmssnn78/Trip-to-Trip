@@ -18,6 +18,7 @@ import Admin from './Admin/Admin';
 import Profile from './Profile/Profile';
 import { auth } from './Firebase/config';
 import Booking from './BookingPage/BookingPage';
+import DetailedLocation from './DetailedLocation/DetailedLocation';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
           <Route exact path='/Admin' element={<Admin />} />
           <Route exact path='/Booking' element={<Booking set_data={booking_data}/>} />
           <Route exact path='/Profile' element={<Profile name={userName}/>} />
+          <Route exact path='/DetailedLocation' element={<DetailedLocation location={booking_data}/>} />
           <Route exact path='/' element={<Home />} />
         </Routes>
       </Router>
