@@ -87,6 +87,45 @@ const BookingPage = (props) => {
                         </Form.Group>
                     </div>
 
+                    <div className="address-booking common-div-booking">
+                        <Form.Group className="mb-booking">
+                            <TextField id="outlined-b-address" onChange={(event) => setBook((prev) => ({ ...prev, address: event.target.value }))} defaultValue="" size="small" label="Country" variant="outlined" />
+                        </Form.Group>
+                        <Form.Group className="mb-booking">
+                            <TextField id="outlined-b-city" onChange={(event) => setBook((prev) => ({ ...prev, city: event.target.value }))} defaultValue="" size="small" label="Location" variant="outlined" />
+                        </Form.Group>
+                    </div>
+
+                    <div className="address-booking common-div-booking">
+                        <Form.Group className="mb-booking">
+                            <TextField id="outlined-b-address" onChange={(event) => setBook((prev) => ({ ...prev, address: event.target.value }))} defaultValue="" size="small" type='number' label="Person?" variant="outlined" />
+                        </Form.Group>
+                        <Form.Group className="mb-booking">
+                            <TextField id="outlined-b-city" onChange={(event) => setBook((prev) => ({ ...prev, city: event.target.value }))} defaultValue="" size="small" type='number' label="Days?" variant="outlined" />
+                        </Form.Group>
+                    </div>
+
+                    <div className="address-booking common-div-booking">
+                        <div className="mb-booking">
+                            <label>Choose a Hotel: </label>
+                            <select  name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                        <div className="mb-booking">
+                            <label>Choose a Flight: </label>
+                            <select  name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>     
+                    </div>
+
                     <Form.Group className="mb-booking">
                         <FormControlLabel control={<Checkbox />} label="Yes, I agree with all terms & conditions" />
                     </Form.Group>
