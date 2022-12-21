@@ -2,7 +2,7 @@ import React,{ useEffect, useState } from 'react';
 import './DetailedLocation.css';
 // import logo from '../resources/sun.jpg';
 import { useNavigate } from "react-router-dom";
-import { wait } from '@testing-library/user-event/dist/utils';
+// import { wait } from '@testing-library/user-event/dist/utils';
 
 const DetailedLocation = (props) => {
 
@@ -19,7 +19,7 @@ const DetailedLocation = (props) => {
     }
 
     const filtered_spot= ()=>{
-            let filteredspot = DLdata.filter(data => data.location == props.location)
+            let filteredspot = DLdata.filter(data => data.location === props.location)
             setDLFilter(filteredspot);
         }
     useEffect(() => {
@@ -41,8 +41,8 @@ const DetailedLocation = (props) => {
                 <div id='all_location_display'>
                     {
                         DLFilter.length > 0 && DLFilter.map( (data) =>(
-                            <div className='DL_single_loc_display'>
-                                <img className="DL_Location_imgs" src={"data:image/jpeg;base64," + data?.imageinfo.image} alt="this is img" key={data?._id}></img>
+                            <div className='DL_single_loc_display' key={data?._id}>
+                                <img className="DL_Location_imgs" src={"data:image/jpeg;base64," + data?.imageinfo.image} alt="this is img" ></img>
                                 <p className='DL_Location_name'>{data?.spot}</p>
                             </div>
                             

@@ -6,7 +6,7 @@
 
 .Booking-page-main{
     position: relative;
-    padding: 10rem;
+    padding: 8rem;
     
     height: 100vh;
     width: 100vw;
@@ -36,4 +36,32 @@
 }
 .mb-booking :only-child{
     width: 100%;
+}
+
+.mb-booking-select{
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-left: .8rem;
+
+}
+
+#checkterm{
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+#checkbox_label{
+    font-size: 1.2rem;
+}
+#btn-b-submit{
+    margin-left: 1.3rem;
+}
+#btn-b-submit:hover{
+    background-color: orange;
+    color: black;
+    
+}
+#mb-error{
+    margin: 1.5rem;
+    font-size: 1.5rem;
+    color: red;
 }

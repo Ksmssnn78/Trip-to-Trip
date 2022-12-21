@@ -24,6 +24,7 @@ const RegisterPage = () => {
         address: "",
         city: "",
         state: "",
+        status: "user"
     });
 
     const [errorMsg, setErrorMsg] = useState("");
@@ -54,7 +55,7 @@ const RegisterPage = () => {
                 setErrorMsg(err.message);
             });
         if (authErr === "") {
-            axios.post('http://localhost:5000/Register/postData', regEmail).then(respose => {
+            axios.post('http://localhost:5000/adduser', regEmail).then(respose => {
                 console.log(respose)
             }).catch(error => {
                 console.log(error)

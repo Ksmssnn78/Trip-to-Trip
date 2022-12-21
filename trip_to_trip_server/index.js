@@ -410,11 +410,16 @@ MongoClient.connect(url, function(err, db) {
     })
     
 });
+
 //posting data from react and fecthing here:
 app.post('/booking/postData',(req, ress) => {
     const bookingData = req.body;
     console.log(bookingData);
 });
-
+// posting data from react (user data)
+app.post('/Register/postData',(req, ress) => {
+    const regData = req.body;
+    console.log(regData);
+});
 
 app.listen(5000);
