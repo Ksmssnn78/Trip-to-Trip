@@ -36,28 +36,13 @@ export default class VerticalMode extends Component {
 
   }
 
-  mouse_Down_Coords = e => {
-    window.checkForDrag = e.clientX;
-  };
-
-  click_Or_Drag = (e) => {
-    const mouseUp = e.clientX;
-    if (
-      mouseUp < window.checkForDrag + 6 &&
-      mouseUp > window.checkForDrag - 6
-    ) {
-      // this.state.navigate('/booking');
-      //console.log("not working");
-    }
-  };
-
 
 
   render() {
     const settings = {
       dots: true,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       vertical: true,
       verticalSwiping: true,
@@ -71,17 +56,16 @@ export default class VerticalMode extends Component {
     return (
 
       <div id="community_main">
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <Slider {...settings} ref={slider => this.slider = slider}>
-          {this.state.posts.map((post) => (
-            <div className="CM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e)} onMouseUp={e => this.click_Or_Drag(e)} key={post.id}>
+            {this.state.posts.map((post) => ( 
+            <div className="CM_slick_div"  key={"post.id"}>
               <div id="p-profile">
                 <div id="pic">
                   <img src="../resources/Home.png" alt="" />
                 </div>
                 <div id="profile-name">
                   <p>
-                    <b>Tonmoy Roy</b>
+                    <b>{post.name}</b>
                   </p>
                 </div>
               </div>
@@ -89,7 +73,7 @@ export default class VerticalMode extends Component {
                   <p>the quick brown fox jumps right over a lazy dog</p>
               </div>
                 <div id="ed-photo">
-                  <img src="../resources/Home.png" alt="" />
+                  <img src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="" />
                   photo
                 </div>
               <div id="dsin">
@@ -99,7 +83,7 @@ export default class VerticalMode extends Component {
               </div>
             </div>
 
-          ))}
+            ))}  
           {/* <div onClick={() => {this.handleClickSlide() }}>
             <img className="v_img" src={logo} alt="logo 1"></img>
             </div>
