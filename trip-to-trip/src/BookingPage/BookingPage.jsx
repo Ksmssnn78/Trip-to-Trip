@@ -9,10 +9,14 @@ import TextField from '@mui/material/TextField';
 // import Checkbox from '@mui/material/Checkbox';
 import axios from 'axios';
 // import { wait } from '@testing-library/user-event/dist/utils';
+import { useNavigate } from "react-router-dom";
 
 const BookingPage = (props) => {
 
+    const navigate = useNavigate();
+
     const [errMsg, setErrMsg] = useState("");
+    const [hoteldata, setHotelData] = useState([]);
     const [book, setBook] = useState({
         username: "",
         email: "",
@@ -30,6 +34,16 @@ const BookingPage = (props) => {
         vehicle_type: ""
     });
 
+    const filterHoteldata = async() =>{
+        const response = await fetch('http://localhost:5000/hotels_info');
+        const data = await response.json();
+        setHotelData(data);
+        console.log(data);
+    }
+
+    useEffect(()=>{
+        filterHoteldata();
+      },[])
 
     const submitbooking = (e) =>{
         e.preventDefault();
@@ -47,6 +61,7 @@ const BookingPage = (props) => {
                     }).catch(error => {
                         console.log(error)
                     })
+                    navigate('/BookingFinal')
                 }
                 
             }catch(e){
@@ -126,11 +141,13 @@ const BookingPage = (props) => {
                         <div className="mb-booking">
                             <label className='mb-booking-select'>Choose a Hotel : </label>
                             <select  name="Hotel" onChange={(event) => setBook((prev) => ({ ...prev, hotel: event.target.value }))}>
-                                <option value=""></option>
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
+                                <option className='mb-booking-select-option' value=""></option>
+                                {
+                                    hoteldata.length > 0 && hoteldata.map((data)=>(
+                                        <option className='mb-booking-select-option' value={data?.heading} key={data?._id}>{data.heading}</option>
+                                    ))
+                                }
+                                
                             </select>
                         </div>
                         <div className="mb-booking">

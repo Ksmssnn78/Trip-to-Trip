@@ -19,6 +19,7 @@ import Profile from './Profile/Profile';
 import { auth } from './Firebase/config';
 import Booking from './BookingPage/BookingPage';
 import DetailedLocation from './DetailedLocation/DetailedLocation';
+import BookingFinalSummary from './BookingFinalSummary/BookingFinalSummary';
 
 function App() {
 
@@ -113,6 +114,7 @@ function App() {
           <Route exact path='/Booking' element={<Booking set_email={tempEmaildata} set_username={tempUNdata} set_fname={tempFNdata} set_lname={tempLNdata} set_address={tempADDdata} set_city={tempCITYdata} set_loc={tempSldata} set_cntry={tempSCdata}/>} />
           <Route exact path='/Profile' element={<Profile name={userName}/>} />
           <Route exact path='/DetailedLocation' element={<DetailedLocation location={location_data}/>} />
+          <Route exact path='/BookingFinal' element={<BookingFinalSummary />} />
           <Route exact path='/' element={<Home />} />
         </Routes>
       </Router>
