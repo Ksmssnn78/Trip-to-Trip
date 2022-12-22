@@ -311,7 +311,7 @@ MongoClient.connect(url, function(err, db) {
                 imageinfo:finalImg
             };
         console.log(myobj);
-        dbo.collection("post_user").insertOne(myobj, function(err, res) {
+        dbo.collection("post_information").insertOne(myobj, function(err, res) {
         if (err) throw err;
         // db.close();
         db.on('close', function () {
