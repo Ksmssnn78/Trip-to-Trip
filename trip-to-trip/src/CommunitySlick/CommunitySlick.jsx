@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './CommunitySlick.css';
+// import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import logo from '../resources/sun.jpg';
 
 export default class VerticalMode extends Component {
@@ -54,7 +55,7 @@ export default class VerticalMode extends Component {
       }
     };
     return (
-
+      
       <div id="community_main">
         <Slider {...settings} ref={slider => this.slider = slider}>
             {this.state.posts.map((post) => ( 
@@ -70,13 +71,14 @@ export default class VerticalMode extends Component {
                 </div>
               </div>
               <div id="txt">
-                  <p>the quick brown fox jumps right over a lazy dog</p>
+                  <p>{post.description}</p>
               </div>
                 <div id="ed-photo">
-                  <img src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="" />
-                  photo
+                  <img id="post-pic" src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="" />
+                  
                 </div>
               <div id="dsin">
+                 {/* <ThumbUpOffAltIcon/>  */}
                   <p><span class="taab"><b>Like</b></span>
                   <span class="tab"><b>Comment</b></span>
                   <span class="ttab"><b>Share</b></span></p>
@@ -95,7 +97,7 @@ export default class VerticalMode extends Component {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch("http://localhost:5000/post_info");
   const posts = await res.json();
   // console.log(posts);
   return {
