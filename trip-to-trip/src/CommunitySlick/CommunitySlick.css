@@ -4,16 +4,15 @@
     box-sizing: border-box;
 }
 #community_main{
-     /* background-image: url("../resources/Group_207.png");  */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    height: 100%;
+    overflow: scroll;
+    height: 100vh;
     width: 100%;
 }
 .CM_slick_div{
     background-color: white;
+}
+#community_main::-webkit-scrollbar{
+    display: none;
 }
 #p-profile {
     display: flex;
@@ -35,31 +34,39 @@
 }
 #ed-photo{
     border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    background-color: brown;
-    height:600px;
-    width:99%;
+    padding: 15px;
+    height:700px;
+    width:100%;
+    margin-bottom: 30px;
+}
+#post-pic{
+    height:700px;
+    width:100%;
 }
 #dsin{
-  border-radius: 10px;
-  padding: 5px;
-  margin:-5px 5px;
-  background-color:deepskyblue;
+  border-radius: 5px;
   height:45px;
-  /* width: 100%; */
+  width:1230px;
+  padding : 5px;
+  background-color: blue;
+  margin-left: 10px;
 }
 .taab{
   text-align: left;
-  margin-left: 10px;
+  margin-left: 20px;
+  background-color:red;
+  height:10px;
+  width:100px;
 }
-.tab {
+.tab{
     text-align: left;
-    margin-left: 50vh;
+    margin-left: 40vh;
+    background-color:white;
 }
 .ttab{
   text-align: left;
   margin-left: 45vh;
+  background-color:white;
 }
 
 

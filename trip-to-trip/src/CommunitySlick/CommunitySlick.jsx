@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './CommunitySlick.css';
+// import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import logo from '../resources/sun.jpg';
 
 export default class VerticalMode extends Component {
@@ -36,28 +37,13 @@ export default class VerticalMode extends Component {
 
   }
 
-  mouse_Down_Coords = e => {
-    window.checkForDrag = e.clientX;
-  };
-
-  click_Or_Drag = (e) => {
-    const mouseUp = e.clientX;
-    if (
-      mouseUp < window.checkForDrag + 6 &&
-      mouseUp > window.checkForDrag - 6
-    ) {
-      // this.state.navigate('/booking');
-      //console.log("not working");
-    }
-  };
-
 
 
   render() {
     const settings = {
       dots: true,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       vertical: true,
       verticalSwiping: true,
@@ -69,37 +55,37 @@ export default class VerticalMode extends Component {
       }
     };
     return (
-
+      
       <div id="community_main">
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <Slider {...settings} ref={slider => this.slider = slider}>
-          {this.state.posts.map((post) => (
-            <div className="CM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e)} onMouseUp={e => this.click_Or_Drag(e)} key={post.id}>
+            {this.state.posts.map((post) => ( 
+            <div className="CM_slick_div"  key={"post.id"}>
               <div id="p-profile">
                 <div id="pic">
                   <img src="../resources/Home.png" alt="" />
                 </div>
                 <div id="profile-name">
                   <p>
-                    <b>Tonmoy Roy</b>
+                    <b>{post.name}</b>
                   </p>
                 </div>
               </div>
               <div id="txt">
-                  <p>the quick brown fox jumps right over a lazy dog</p>
+                  <p>{post.description}</p>
               </div>
                 <div id="ed-photo">
-                  <img src="../resources/Home.png" alt="" />
-                  photo
+                  <img id="post-pic" src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="" />
+                  
                 </div>
               <div id="dsin">
+                 {/* <ThumbUpOffAltIcon/>  */}
                   <p><span class="taab"><b>Like</b></span>
                   <span class="tab"><b>Comment</b></span>
                   <span class="ttab"><b>Share</b></span></p>
               </div>
             </div>
 
-          ))}
+            ))}  
           {/* <div onClick={() => {this.handleClickSlide() }}>
             <img className="v_img" src={logo} alt="logo 1"></img>
             </div>
@@ -111,7 +97,7 @@ export default class VerticalMode extends Component {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch("http://localhost:5000/post_info");
   const posts = await res.json();
   // console.log(posts);
   return {
