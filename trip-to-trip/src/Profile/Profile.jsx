@@ -39,8 +39,6 @@ const Profile = (props) => {
                         <Row className="mb-3" as={Col}>
                             <Form.Group className="mb-3">
                                 <label id="email" size="small">{auth.currentUser.email}</label>
-                                {/* <label id="email" size="small" value="">{props.email ? `${props.email}` : ""}</label> */}
-                                {/* <TextField id="email" value={props.email ? `${props.email}` : ""} size="small" label="Email" variant="outlined" /> */}
                             </Form.Group>
                             <Form.Group as={Col}>
                                 <TextField id="fname" size="small" label="First Name" variant="outlined" />
