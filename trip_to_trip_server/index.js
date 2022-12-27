@@ -86,16 +86,14 @@ const upload = multer({
 
 
 /// this is post method for all the pages.
-
+// this is only for adding country information
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("trip_to_trip");
-    // var myobj = { C_name: "Canada", level: "Maple leaf", quote:" A Mari Usque Ad Mare(From sea to sea)" };
-    // this is only for adding country
     app.post('/addcountry',upload.single("file"), (req, ress) => {
             const country_info = req.body;
             const country_img = req.file;
-            console.log(country_img);
+            //console.log(country_img);
             if (typeof country_img == 'undefined') {
                 var finalImg = {}
               }
@@ -143,7 +141,7 @@ MongoClient.connect(url, function(err, db) {
     app.post('/adduser',upload.single("file"), (req, ress) => {
         const user_info = req.body;
         const user_img = req.file;
-        console.log(user_img);
+        //console.log(user_img);
         if (typeof user_img == 'undefined') {
             var finalImg = {}
         }
@@ -195,7 +193,7 @@ MongoClient.connect(url, function(err, db) {
     app.post('/addlocation',upload.single("file"), (req, ress) => {
         const loc_info = req.body;
         const loc_Img = req.file;
-        console.log(loc_Img);
+        //console.log(loc_Img);
         if (typeof loc_Img == 'undefined') {
             var finalImg = {}
         }
@@ -243,7 +241,7 @@ MongoClient.connect(url, function(err, db) {
     app.post('/addspot',upload.single("file"), (req, ress) => {
         const spot_info = req.body;
         const spot_img = req.file;
-        console.log(spot_img);
+        //console.log(spot_img);
         if (typeof spot_img == 'undefined') {
             var finalImg = {}
         }
@@ -290,7 +288,7 @@ MongoClient.connect(url, function(err, db) {
     app.post('/addpost',upload.single("file"), (req, ress) => {
         const post_info = req.body;
         const post_img = req.file;
-        console.log(post_img);
+        //console.log(post_img);
         if (typeof post_img == 'undefined') {
             var finalImg = {}
         }
@@ -306,6 +304,7 @@ MongoClient.connect(url, function(err, db) {
         }
             var myobj = {
                 heading: post_info.heading,
+                name: post_info.name,
                 email: post_info.email,
                 description: post_info.description,
                 imageinfo:finalImg
@@ -338,7 +337,7 @@ MongoClient.connect(url, function(err, db) {
     app.post('/addhotel',upload.single("file"), (req, ress) => {
         const hotel_info = req.body;
         const hotel_img = req.file;
-        console.log(hotel_img);
+        //console.log(hotel_img);
         if (typeof hotel_img == 'undefined') {
             var finalImg = {}
         }
@@ -383,7 +382,7 @@ MongoClient.connect(url, function(err, db) {
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("trip_to_trip");
-    app.post('/addflight',upload.single("file"), (req, ress) => {
+    app.post('/addflight', (req, ress) => {
         const flight_info = req.body;
         var myobj = {
                 flight: flight_info.flight,
@@ -399,12 +398,6 @@ MongoClient.connect(url, function(err, db) {
             console.log('Error...close');
           });
         console.log("1 document inserted");
-        if (typeof flight_img != 'undefined') {
-                fs.unlink('./uploads/'+flight_img.filename,function(err){
-                if(err) return console.log(err);
-                console.log('file deleted successfully');
-            }); 
-        }
         ress.sendFile(__dirname+'/index.html');
     })
     })
@@ -412,10 +405,42 @@ MongoClient.connect(url, function(err, db) {
 });
 
 //posting data from react and fecthing here:
-app.post('/booking/postData',(req, ress) => {
-    const bookingData = req.body;
-    console.log(bookingData);
+
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("trip_to_trip");
+    app.post('/booking/postData', (req, ress) => {
+        const bookingData = req.body;
+        console.log(bookingData);
+        var myobj = {
+            username: bookingData.username,
+            email:bookingData.email,
+            fname: bookingData.fname,
+            lname: bookingData.lname,
+            address: bookingData.address,
+            city: bookingData.city,
+            hotel: bookingData.hotel,
+            country: bookingData.country,
+            location: bookingData.location,
+            person:bookingData.person,
+            days: bookingData.days,
+            start_loc: bookingData.start_loc,
+            room:bookingData.room,
+            vehicle_type:bookingData.vehicle_type 
+    };
+        dbo.collection("booking_rec_information").insertOne(myobj, function(err, res) {
+        if (err) throw err;
+        // db.close();
+        db.on('close', function () {
+            console.log('Error...close');
+          });
+        console.log("1 document inserted");
+        ress.sendFile(__dirname+'/index.html');
+    })
+    })
+    
 });
+
 // posting data from react (user data)
 app.post('/Register/postData',(req, ress) => {
     const regData = req.body;
