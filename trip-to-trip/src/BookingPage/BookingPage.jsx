@@ -7,15 +7,17 @@ import Form from "react-bootstrap/Form";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 // import Checkbox from '@mui/material/Checkbox';
-import axios from 'axios';
+
 // import { wait } from '@testing-library/user-event/dist/utils';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookingPage = (props) => {
 
     const navigate = useNavigate();
 
-    const [errMsg, setErrMsg] = useState("");
+    // const [errMsg, setErrMsg] = useState("");
     const [hoteldata, setHotelData] = useState([]);
     const [book, setBook] = useState({
         username: "",
@@ -37,8 +39,12 @@ const BookingPage = (props) => {
     const filterHoteldata = async() =>{
         const response = await fetch('http://localhost:5000/hotels_info');
         const data = await response.json();
-        setHotelData(data);
         console.log(data);
+        if(data.length > 0){
+            var temp = data.filter((dt)=> dt.location === props.set_loc );
+        }
+        setHotelData(temp);
+        
     }
 
     useEffect(()=>{
@@ -49,26 +55,50 @@ const BookingPage = (props) => {
         e.preventDefault();
         let check_b = document.getElementById("checkterm");
         if(check_b.checked){
+            book.username= props.set_username;
+            book.email= props.set_email;
+            book.fname= props.set_fname;
+            book.lname= props.set_lname;
+            book.address= props.set_address;
+            book.city= props.set_city;
+            book.country= props.set_cntry;
+            book.location= props.set_loc;
             console.log(book);
             console.log(props.set_loc);
             try{
                 if (book.person === "" || book.room === "" || book.days === "" || book.start_loc === "" || book.vehicle_type === "" || book.hotel === "") {
-                    setErrMsg("Fill all fields correctly");
+                    // setErrMsg("Fill all fields correctly!");
+                    toast.error('Fill all fields correctly!', {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
                     return;
                 }else{
-                    axios.post('http://localhost:5000/Booking/postData',book).then(respose => {
-                    console.log(respose)
-                    }).catch(error => {
-                        console.log(error)
-                    })
-                    navigate('/BookingFinal')
+                    props.getBookingInfo(book);
+                    navigate('/BookingFinal');
                 }
                 
             }catch(e){
                 console(e)
             }
         }else{
-            setErrMsg("please Check the Box before proceed!")
+            // setErrMsg("please Check the Box before proceed!")
+            toast.error('please Check the Box before proceed!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
         
     }   
@@ -168,8 +198,9 @@ const BookingPage = (props) => {
                         <Button id="btn-b-submit" onClick={submitbooking} variant="contained">Proceed</Button>
                     </Form.Group>
 
-                    <b id="mb-error">{errMsg}</b>
+                    {/* <b id="mb-error">{errMsg}</b> */}
                 </Form >
+                <ToastContainer />
         </div>
     );
 };
