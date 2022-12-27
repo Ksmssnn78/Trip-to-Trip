@@ -73,8 +73,8 @@ const CenterModeSlick = (props) => {
         imgs.length > 0 && imgs.map((item) => (
           <div key={item?._id} onMouseDown={e => mouseDownCoords(e)} onMouseUp={e => clickOrDrag(e,item?.c_name)}>
           <img className='c_img' src={"data:image/jpeg;base64," + item?.imageinfo.image} alt="logo 1"></img>
-          <p> {item?.level}</p>
-          <p> {item?.c_name}</p>
+          <p className="c_level"> {item?.level}</p>
+          <p className="c_name"> {item?.c_name}</p>
           </div>
         ))
       }

@@ -31,7 +31,14 @@ const DetailedLocation = (props) => {
      },[DLdata])
 
     const DL_Submit = () =>{
-            navigate('/Booking')
+
+        if(props.userEmail === "")
+        {
+            navigate('/SignIn');
+        }else{
+            navigate('/Booking');
+        }
+        
     }
 
     return (

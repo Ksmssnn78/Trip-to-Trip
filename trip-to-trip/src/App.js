@@ -33,6 +33,7 @@ function App() {
   const [tempLNdata, setTempLNData] = useState("");
   const [tempADDdata, setTempADDData] = useState("");
   const [tempCITYdata, setTempCITYData] = useState("");
+  const [tempBookingdata, setTempBookingData] = useState([]);
   const [spot_data, setSpotData] = useState();
   const [userdata, setUserData] = useState();
   // console.log(booking_data);
@@ -111,10 +112,10 @@ function App() {
           <Route exact path='/SignIn' element={<SignIn />} />
           <Route exact path='/Register' element={<Register />} />
           <Route exact path='/Admin' element={<Admin />} />
-          <Route exact path='/Booking' element={<Booking set_email={tempEmaildata} set_username={tempUNdata} set_fname={tempFNdata} set_lname={tempLNdata} set_address={tempADDdata} set_city={tempCITYdata} set_loc={tempSldata} set_cntry={tempSCdata}/>} />
+          <Route exact path='/Booking' element={<Booking getBookingInfo={setTempBookingData} set_email={tempEmaildata} set_username={tempUNdata} set_fname={tempFNdata} set_lname={tempLNdata} set_address={tempADDdata} set_city={tempCITYdata} set_loc={tempSldata} set_cntry={tempSCdata}/>} />
           <Route exact path='/Profile' element={<Profile name={userName}/>} />
-          <Route exact path='/DetailedLocation' element={<DetailedLocation location={location_data}/>} />
-          <Route exact path='/BookingFinal' element={<BookingFinalSummary />} />
+          <Route exact path='/DetailedLocation' element={<DetailedLocation userEmail={tempEmaildata} location={location_data}/>} />
+          <Route exact path='/BookingFinal' element={<BookingFinalSummary final_info={tempBookingdata} />} />
           <Route exact path='/' element={<Home />} />
         </Routes>
       </Router>

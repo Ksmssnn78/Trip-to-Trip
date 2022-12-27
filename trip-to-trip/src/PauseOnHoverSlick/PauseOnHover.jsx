@@ -95,7 +95,7 @@ const PauseOnHover = (props) => {
         filtered_Data.length > 0 && filtered_Data.map( (data) =>(
           <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e,data?.location)} key={data?._id}>
             <img className='P_img' src={"data:image/jpeg;base64," + data?.imageinfo.image} alt="logo"/>
-            <p>{data?.location}</p>
+            <p className="p_loc_name">{data?.location}</p>
           </div>
         ) )
       }
