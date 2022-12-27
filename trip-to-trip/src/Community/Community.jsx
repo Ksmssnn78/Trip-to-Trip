@@ -5,7 +5,8 @@ import CommunitySlick from '../CommunitySlick/CommunitySlick';
 import Form from "react-bootstrap/Form";
 
 
-const Community = () => {
+const Community = (props) => {
+
     return (
         <div id="container">
             <div id="first">
@@ -18,15 +19,12 @@ const Community = () => {
                             <b>Tonmoy Roy</b>
                         </p>
                         <p>
-                            #tonmoyroy111
+                            #{props.name}
                         </p>
                     </div>
 
                 </div>
-                <div id="menu">
-                    <button id="btn-profile">Profile</button>
-                    <button id="btn-photos">Photos</button>
-                </div>
+
             </div>
             <div id="second">
                 <Form id="create-post">
@@ -38,8 +36,8 @@ const Community = () => {
                 </div>
             </div>
             <div id="third">
-                <div id="new-page">
-                    <h1>something new is coming</h1>
+                <div id="menu">
+                    <button id="btn-profile">Profile</button>
                 </div>
             </div>
         </div>

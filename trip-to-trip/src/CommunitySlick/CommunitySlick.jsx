@@ -14,7 +14,6 @@ export default class VerticalMode extends Component {
     this.state = { posts: [] };
   }
 
-  // navigate = useNavigate();
 
   slide(y) {
     y > 0 ? (

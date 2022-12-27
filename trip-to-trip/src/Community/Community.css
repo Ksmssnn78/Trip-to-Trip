@@ -1,154 +1,134 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #container {
-    background-image: url(../resources/Group_207.png);
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    position: fixed;
+  background-image: url(../resources/Group_207.png);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: fixed;
 }
 
 #first {
-    width: 300px;
-    text-align: center;
-    margin-top: 120px;
+  width: 300px;
+  text-align: center;
+  margin-top: 120px;
 }
 
 #profile {
-    display: flex;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px;
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
 }
 
 #image {
-    height: 80px;
-    width: 80px;
-    border-radius: 5px;
-    background-color: brown;
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: brown;
 }
 
 #profile-name {
-    text-align: left;
-    padding-left: 10px;
+  text-align: left;
+  padding-left: 10px;
 }
 
 #second {
-    text-align: center;
-    margin-top: 125px;
-    width: 55vw;
+  text-align: center;
+  margin-top: 125px;
+  width: 65vw;
 }
 
 #menu {
-    display: block;
-    text-align: center;
-    background-color: white;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px;
+  display: block;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
 }
 
-#btn-profile,
-#btn-photos {
-    width: 100%;
-    height: 50%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px 0 10px;
-    display: block;
-    border: none;
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.123);
-    font-weight: 500;
-    transition: 0.3s;
+#btn-profile {
+  width: 18vw;
+  height: 2.5rem;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px 0 10px;
+  display: block;
+  border: none;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.123);
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-#btn-profile:hover,
-#btn-photos:hover {
-    background-color: rgb(212, 118, 255);
-    color: white;
-    transition: 0.3s;
+#btn-profile:hover {
+  background-color: rgb(126, 18, 177);
+  color: white;
+  transition: 0.3s;
 }
 
 #create-post {
-    background-color: white;
-    padding: 10px;
-    width: 35vw;
-    margin: 5px;
-    border-radius: 10px;
-    display: inline-block;
+  background-color: white;
+  padding: 10px;
+  width: 35vw;
+  margin: 5px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 #outlined-loguser {
-    width: 25vw;
-    /* height: 18px; */
-    height: 2vh;
+  width: 25vw;
+  height: 2vh;
 }
 
 #btn-post {
-    width: 6vw;
-    background-color: darkslateblue;
-    color: white;
-    padding: 0.3em;
-    margin-left: 20px;
-    box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.123);
-    border-radius: 5px;
-    border: none;
+  width: 6vw;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  padding: 0.3em;
+  margin-left: 20px;
+  box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.123);
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s;
+}
+#btn-post:hover{
+    background-color: rgb(56, 56, 56);
+    transition: 0.3s;
 }
 
 #post {
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    background-color: white;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
 }
 
-/* #request {
-    background-color: green;
-    padding: 60px 90px;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: start;
-} */
-
-/* #friend-list {
-    background-color: red;
-    padding: 80px 90px;
-    margin: 10px;
-    border-radius: 10px;
-} */
-
-/* #photo {
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
-    background-color: brown;
-} */
-
-/* #prof-req {
-    display: flex;
-} */
-
 #third {
-    width: 520px;
-    text-align: center;
-    margin-top: 120px;
+  width: 520px;
+  text-align: center;
+  margin-top: 120px;
+  margin-left: 10px;
 }
 
 #new-page {
-    background-color: white;
-    padding: 100px;
-    margin: 20px;
-    border-radius: 5px;
-    color: black;
-    height: 400px;
-    width: 100%;
+  background-color: white;
+  padding: 100px;
+  margin: 20px;
+  border-radius: 5px;
+  color: black;
+  height: 400px;
+  width: 100%;
 }
