@@ -10,9 +10,9 @@
   font-family: "Poppins";
   text-transform: uppercase;
 }
-#ad-head{
-    padding: 10px;
-    margin-top: 50px;
+#ad-head {
+  padding: 10px;
+  margin-top: 50px;
 }
 #admin-1st {
   margin-top: 25px;
@@ -28,10 +28,10 @@
 }
 #CNT-Country,
 #CNT-Spot,
-#CNT-Post,
+#CNT-Special,
 #CNT-Hotel {
   margin: 10px;
-  height: 300px;
+  height: 320px;
   width: 300px;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
@@ -40,7 +40,7 @@
 }
 #CNT-User {
   margin: 10px;
-  height: 530px;
+  height: 550px;
   width: 300px;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
@@ -48,14 +48,28 @@
   box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
 }
 #CNT-Location,
-#CNT-Flight {
+#CNT-Flight,
+#CNT-Post {
   margin: 10px;
-  height: 350px;
+  height: 360px;
   width: 300px;
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   text-align: center;
   box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
+}
+.choplc{
+  margin: 5px;
+  width: 220px;
+}
+.choplc::-webkit-file-upload-button{
+  width: 100px;
+  height: 30px;
+  background: rgb(34, 34, 34);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .plc {
   width: 200px;
@@ -73,4 +87,5 @@
   border: none;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
 }

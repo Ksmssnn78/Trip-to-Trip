@@ -9,6 +9,8 @@ import TextField from '@mui/material/TextField';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../Firebase/config';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const RegisterPage = () => {
@@ -27,16 +29,27 @@ const RegisterPage = () => {
         status: "user"
     });
 
-    const [errorMsg, setErrorMsg] = useState("");
+    const delay = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+    );
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
     const handleSubmission = () => {
         var authErr = "";
         if (!regEmail.username || !regEmail.email || !regEmail.fname || !regEmail.lname || !regEmail.password || !regEmail.conpass || !regEmail.address || !regEmail.city || !regEmail.state) {
-            setErrorMsg("Fill all fields");
+
+            toast.error('Fill all fields!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             return;
         }
-        setErrorMsg("");
 
         setSubmitButtonDisabled(true);
         createUserWithEmailAndPassword(auth, regEmail.email, regEmail.password)
@@ -46,13 +59,33 @@ const RegisterPage = () => {
                 await updateProfile(user, {
                     displayName: regEmail.username,
                 });
+                toast.success('Registration done!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                await delay(3000);
                 navigate("/SignIn");
             })
             .catch((err) => {
                 authErr = err.message;
                 console.log(authErr);
                 setSubmitButtonDisabled(false);
-                setErrorMsg(err.message);
+                toast.error('Already registered with this email!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             });
         if (authErr === "") {
             axios.post('http://localhost:5000/adduser', regEmail).then(respose => {
@@ -122,9 +155,9 @@ const RegisterPage = () => {
                         Already have an account?
                         <Link id="link-sign" to="/SignIn">Login here</Link>
                     </p>
-                    <b id="error">{errorMsg}</b>
                 </Form >
             </div >
+            <ToastContainer />
         </div>
     );
 };
