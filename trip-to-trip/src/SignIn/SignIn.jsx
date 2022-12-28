@@ -6,23 +6,34 @@ import TextField from '@mui/material/TextField';
 import Form from "react-bootstrap/Form";
 import { auth } from '../Firebase/config';
 import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = () => {
 
     const navigate = useNavigate();
+    const delay = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+    );
     const [logEmail, setLogEmail] = useState({
         email: "",
         password: "",
     });
 
-    const [errorMsg, setErrorMsg] = useState("");
-
     const handleSubmission = () => {
         if (!logEmail.email || !logEmail.password) {
-            setErrorMsg("Fill all fields");
+            toast.error('Fill all fields!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             return;
         }
-        setErrorMsg("");
 
         signInWithEmailAndPassword(auth, logEmail.email, logEmail.password)
             .then(async (res) => {
@@ -30,10 +41,30 @@ const SignIn = () => {
                 await updateProfile(user, {
                     displayName: logEmail.email,
                 });
+                toast.success("Let's go in!", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                await delay(3000);
                 navigate("/Home");
             })
             .catch((err) => {
-                setErrorMsg(err.message);
+                toast.error('Wrong email or password!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             });
     }
 
@@ -63,9 +94,9 @@ const SignIn = () => {
                         Don't have an account?
                         <Link id="link-register" to="/Register">Register here</Link>
                     </p>
-                    <b id="error">{errorMsg}</b>
                 </Form >
             </div >
+            <ToastContainer />
         </div>
     );
 };
