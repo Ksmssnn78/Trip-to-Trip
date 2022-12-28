@@ -20,7 +20,7 @@ const BookingFinalSummary = (props) => {
                 console.log(error)
             })
             //alert("your request is processed correctly! please wait for confirmation email.");
-            toast.success('Wow so easy!', {
+            toast.success('Your request is processed!\nPlease wait for our confirmation email.', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,

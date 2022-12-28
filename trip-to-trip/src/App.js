@@ -59,6 +59,9 @@ function App() {
         setTempSlData(temp[0].location);
         setTempSCData(temp[0].country);
       }
+    }else{
+      setTempSlData("");
+      setTempSCData("");
     }
     if (UE !== "") {
       let temp = userdata.filter(data => data.email === UE);
@@ -71,6 +74,13 @@ function App() {
         setTempCITYData(temp[0].city);
       }
 
+    }else{
+      setTempEData("");
+      setTempUNData("");
+      setTempFNData("");
+      setTempLNData("");
+      setTempADDData("");
+      setTempCITYData("");
     }
   }
 
@@ -104,7 +114,7 @@ function App() {
         <Routes>
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Discover" element={<DiscoverPage set_B_DfD={setLocationData} />} />
-          <Route exact path='/Community' element={<Community name={userName} />} />
+          <Route exact path='/Community' element={<Community email={userName} fname={tempFNdata} lname={tempLNdata}/>} />
           <Route exact path='/SpecialDeal' element={<SpecialDeal set_B_D={setLocationData} />} />
           <Route exact path='/AboutUs' element={<AboutUs />} />
           <Route exact path='/SignIn' element={<SignIn />} />
