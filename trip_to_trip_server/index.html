@@ -43,40 +43,32 @@
         </form>
       </div>
 
-      <div id="CNT-Post">
-        <h4 id="head-post">Add post</h4>
-        <form action="/addpost" method="post" enctype="multipart/form-data">
+      <div id="CNT-Special">
+        <h4 id="head-special">Add Special Deal</h4>
+        <form action="/addspecialdeal" method="post">
           <input
             class="plc"
-            type="text"
-            placeholder="heading"
-            name="heading"
+            type="number"
+            placeholder="offer percentage"
+            name="offer"
             required
           />
           <input
             class="plc"
             type="text"
-            placeholder="name"
-            name="name"
+            placeholder="location"
+            name="loc_name"
             required
           />
-          <input
-            class="plc"
-            type="email"
-            placeholder="email"
-            name="email"
-            required
-          />
-          
           <input
             class="plc"
             type="text"
-            placeholder="description"
-            name="description"
+            placeholder="details"
+            name="details"
             required
           />
           <input class="choplc" type="file" placeholder="upload" name="file" />
-          <button id="btn-ad" type="submit">Add post</button>
+          <button id="btn-ad" type="submit">add flight</button>
         </form>
       </div>
 
@@ -264,6 +256,72 @@
           <button id="btn-ad" type="submit">Add user</button>
         </form>
       </div>
+
+      <div id="CNT-Post">
+        <h4 id="head-post">Add post</h4>
+        <form action="/addpost" method="post" enctype="multipart/form-data">
+          <input
+            class="plc"
+            type="text"
+            placeholder="heading"
+            name="heading"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="name"
+            name="name"
+            required
+          />
+          <input
+            class="plc"
+            type="email"
+            placeholder="email"
+            name="email"
+            required
+          />
+
+          <input
+            class="plc"
+            type="text"
+            placeholder="description"
+            name="description"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">Add post</button>
+        </form>
+      </div>
+
+      <!-- <div id="CNT-Special">
+        <h4 id="head-special">Add Special Deal</h4>
+        <form action="/addspecialdeal" method="post">
+          <input
+            class="plc"
+            type="number"
+            placeholder="offer percentage"
+            name="offer"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="location"
+            name="loc_name"
+            required
+          />
+          <input
+            class="plc"
+            type="text"
+            placeholder="details"
+            name="details"
+            required
+          />
+          <input class="choplc" type="file" placeholder="upload" name="file" />
+          <button id="btn-ad" type="submit">add flight</button>
+        </form>
+      </div> -->
 
       <div id="CNT-Location">
         <h4 id="head-location">Add location</h4>
