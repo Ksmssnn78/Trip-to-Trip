@@ -442,9 +442,11 @@ MongoClient.connect(url, function(err, db) {
 });
 
 // posting data from react (user data)
-app.post('/Register/postData',(req, ress) => {
-    const regData = req.body;
-    console.log(regData);
+app.post('/post/postData',upload.single("file"),(req, ress) => {
+    const post_info = req.body;
+    const post_img = req.file;
+    console.log(post_info);
+    console.log(post_img.filename);
 });
 
 app.listen(5000);

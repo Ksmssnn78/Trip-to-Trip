@@ -6,19 +6,20 @@
 #community_main{
     overflow: scroll;
     height: 100vh;
-    width: 100%;
+    width: 50vw;
 }
 .CM_slick_div{
     background-color: white;
+    border-radius: 15px;
+    margin-bottom:1rem;
+    padding: 0.5rem;
 }
 #community_main::-webkit-scrollbar{
     display: none;
 }
 #p-profile {
     display: flex;
-    border-radius: 5px;
     padding: 5px;
-    margin: 10px;
 }
 #pic {
     height: 30px;
@@ -27,43 +28,49 @@
     background-color: brown;
 }
 #txt{
-    display:flex;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px;
+    height: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+   
 }
 #ed-photo{
-    border-radius: 5px;
-    padding: 15px;
-    height:700px;
-    width:100%;
-    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 0.5rem;
+    height: 520px;
+    /* background-color: azure; */
+
 }
 #post-pic{
-    height:700px;
+    height:500px;
     width:100%;
+    border-radius: 10px;
+    margin-top: 0;
+    /* box-shadow: 5px 10px 18px #888888 ; */
 }
 #dsin{
+  margin: 1rem;
+  margin-top: 1.5rem;
   border-radius: 5px;
   height:45px;
-  width:1230px;
   padding : 5px;
-  background-color: blue;
-  margin-left: 10px;
+  background-color:aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-.taab{
+#taab{
   text-align: left;
   margin-left: 20px;
   background-color:red;
   height:10px;
   width:100px;
 }
-.tab{
+#tab{
     text-align: left;
     margin-left: 40vh;
     background-color:white;
 }
-.ttab{
+#ttab{
   text-align: left;
   margin-left: 45vh;
   background-color:white;

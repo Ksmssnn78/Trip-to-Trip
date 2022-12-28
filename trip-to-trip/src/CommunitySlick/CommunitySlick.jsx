@@ -41,8 +41,8 @@ export default class VerticalMode extends Component {
   render() {
     const settings = {
       dots: true,
-      infinite: true,
-      slidesToShow: 1,
+      infinite: false,
+      slidesToShow: 3,
       slidesToScroll: 1,
       vertical: true,
       verticalSwiping: true,
@@ -58,19 +58,19 @@ export default class VerticalMode extends Component {
       <div id="community_main">
         <Slider {...settings} ref={slider => this.slider = slider}>
             {this.state.posts.map((post) => ( 
-            <div className="CM_slick_div"  key={"post.id"}>
+            <div className="CM_slick_div"  key={post?._id}>
               <div id="p-profile">
                 <div id="pic">
                   <img src="../resources/Home.png" alt="" />
                 </div>
                 <div id="profile-name">
                   <p>
-                    <b>{post.name}</b>
+                    <b>{post?.name}</b>
                   </p>
                 </div>
               </div>
               <div id="txt">
-                  <p>{post.description}</p>
+                  <p>{post?.description}</p>
               </div>
                 <div id="ed-photo">
                   <img id="post-pic" src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="" />
@@ -78,9 +78,9 @@ export default class VerticalMode extends Component {
                 </div>
               <div id="dsin">
                  {/* <ThumbUpOffAltIcon/>  */}
-                  <p><span class="taab"><b>Like</b></span>
-                  <span class="tab"><b>Comment</b></span>
-                  <span class="ttab"><b>Share</b></span></p>
+                  <div className="taab"><b>Like</b></div>
+                  <div className="tab"><b>Comment</b></div>
+                  <div className="ttab"><b>Share</b></div>
               </div>
             </div>
 
