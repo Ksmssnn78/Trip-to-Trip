@@ -8,8 +8,6 @@ import { auth } from '../Firebase/config';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Lottie from 'lottie-react';
-import dashboard from '../resources/login.json';
 
 const SignIn = () => {
 
@@ -78,6 +76,7 @@ const SignIn = () => {
                 <div id="sign-title">
                     <h1 className="display-6">Sign In</h1>
                 </div>
+
                 <Form id="SignIn">
                     <Form.Group className="mb-3">
 
@@ -97,13 +96,7 @@ const SignIn = () => {
                     </p>
                 </Form >
             </div >
-
-            <div id='animeDash'>
-                <Lottie animationData={dashboard} loop={true} />
-            </div>
-
             <ToastContainer />
-
         </div>
     );
 };
