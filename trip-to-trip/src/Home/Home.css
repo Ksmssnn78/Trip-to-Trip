@@ -55,7 +55,7 @@
     width: 80vw;
     
 }
-/* #animation_center{
+#animation_center{
     position: absolute;
     right: 13rem;
     top: 17rem;
@@ -66,8 +66,8 @@
 #world_center{
     height: 20rem;
     width: 20rem;
-} */
-/* #animation_circle{
+}
+#animation_circle{
     position: absolute;
     right: 8rem;
     top: 12rem;
@@ -80,8 +80,8 @@
     height: 5rem;
     width: 5rem;
     z-index: 10;
-} */
-/* #airoplane_rotate{
+}
+#airoplane_rotate{
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -92,29 +92,29 @@
     top: 1rem;
     left: 1rem;
     transform: rotate(90deg);
-} */
-/* #camp_rotate{
+}
+#camp_rotate{
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-} */
-/* #advanture_rotate{
+}
+#advanture_rotate{
     position: absolute;
     bottom: 1rem;
     right: 1rem;
-} */
-/* #hot_air_ballon{
+}
+#hot_air_ballon{
     position: absolute;
     bottom: 0;
     left: 25%;
     height: 10rem;
     width: 50rem;
-} */
-/* .hot_air_up_class{
+}
+.hot_air_up_class{
     height: 5rem;
     width: 5rem;
     margin-left: 5rem;
-} */
+}
 #animation_cloud{
     position: absolute;
     height: 35vh;
@@ -129,25 +129,17 @@
 #cloud1_img{
     position: absolute;
     bottom: 0;
-    right: 35rem;
-    z-index: 10;
+    left: 10rem;
 }
 #cloud2_img{
     position: absolute;
     top: 0;
-    right: 10rem;
+    left: 40%;
     z-index: 10;
 }
 #cloud3_img{
     position: absolute;
-    top: 8rem;
+    top: 0;
     right: 5rem;
     z-index: 1;
-}
-#animeHome{
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    top: 10rem;
-    right: 10rem;
 }
