@@ -14,6 +14,7 @@ import Community from './Community/Community';
 import DiscoverPage from './DiscoverPage/DiscoverPage';
 import AboutUs from './AboutUs/AboutUs';
 import SpecialDeal from './SpecialDeal/SpecialDeal';
+import Admin from './Admin/Admin';
 import Profile from './Profile/Profile';
 import { auth } from './Firebase/config';
 import Booking from './BookingPage/BookingPage';
@@ -118,6 +119,7 @@ function App() {
           <Route exact path='/AboutUs' element={<AboutUs />} />
           <Route exact path='/SignIn' element={<SignIn />} />
           <Route exact path='/Register' element={<Register />} />
+          <Route exact path='/Admin' element={<Admin />} />
           <Route exact path='/Booking' element={<Booking getBookingInfo={setTempBookingData} set_email={tempEmaildata} set_username={tempUNdata} set_fname={tempFNdata} set_lname={tempLNdata} set_address={tempADDdata} set_city={tempCITYdata} set_loc={tempSldata} set_cntry={tempSCdata}/>} />
           <Route exact path='/Profile' element={<Profile name={userName}/>} />
           <Route exact path='/DetailedLocation' element={<DetailedLocation userEmail={tempEmaildata} location={location_data}/>} />

@@ -11,8 +11,6 @@ import { auth } from '../Firebase/config';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Lottie from 'lottie-react';
-import RegAnime from '../resources/reg.json';
 
 
 const RegisterPage = () => {
@@ -159,11 +157,6 @@ const RegisterPage = () => {
                     </p>
                 </Form >
             </div >
-
-            <div id='animeDash'>
-                <Lottie animationData={RegAnime} loop={true} />
-            </div>
-
             <ToastContainer />
         </div>
     );

@@ -1,7 +1,7 @@
 #sign_in_body {
   margin: 0;
   padding: 0;
-  background-image: url(../resources/Group_207.png);
+  background-image: url(../resources/register.png);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
@@ -45,11 +45,4 @@
 }
 #link-sign{
   margin-left: 5px;
-}
-#animeDash{
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  top: 10rem;
-  left: 20rem;
 }
