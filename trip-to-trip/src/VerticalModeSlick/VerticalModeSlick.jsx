@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { Link } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './VerticalModeSlick.css';
-import logo from '../resources/sun.jpg';
+
 
 
 export default class VerticalMode extends Component {
@@ -26,6 +25,7 @@ export default class VerticalMode extends Component {
         
     }
     componentDidMount(){
+        
         window.addEventListener('wheel', (e) => {
             this.slide(e.wheelDelta);
         })
@@ -42,8 +42,6 @@ export default class VerticalMode extends Component {
     mouse_Down_Coords = (e,item) => {
       window.checkForDrag = e.clientX;
       // this.props.getD(item)
-      console.log(item)
-      this.props.getD(item)
     };
 
     click_Or_Drag = (e,item) => {
@@ -52,7 +50,7 @@ export default class VerticalMode extends Component {
         mouseUp < window.checkForDrag + 6 &&
         mouseUp > window.checkForDrag - 6
       ) {
-        
+        this.props.getD(item)
         console.log(item)
       }
     };
@@ -60,8 +58,6 @@ export default class VerticalMode extends Component {
     
 
     render() {
-      
-    
       const settings = {
         dots: true,
         infinite: true,
@@ -79,25 +75,21 @@ export default class VerticalMode extends Component {
       return (
         <div id="vertical_main">
         <div id="vertical-slick">
-          <h2>Vertical Mode</h2>
+          <h2 id="VM_heading">Special Deal for our lovely costomers:</h2>
           <Slider {...settings} ref={slider => this.slider = slider }>
           { this.state.posts.map((post) => (
-                  <div className="VM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e,post.email)} onMouseUp={e => this.click_Or_Drag(e,post.email)}  key={post.id}>
+                  <div className="VM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e,post.email)} onMouseUp={e => this.click_Or_Drag(e,post?.location)}  key={post?._id}>
                     <div className="vm-slick-inner-div">
-                      <h1> {post.email}</h1>
-                      <h3>Qatar</h3>
-                      <p>some thing will write later here!</p>
+                      <h1> {post?.offer}%</h1>
+                      <h3>{post?.location}</h3>
+                      <p className="vm-slick-inner-text">{post?.details}</p>
                     </div>
                     <div>
-                      <Link to='/Booking'><img className="v_img" src={logo} alt="logo 1"></img></Link>
+                      <img className="v_img" src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="logo 1" onClick = {this.props.email !== ""?()=>this.props.navigation('/Booking') :()=>this.props.navigation('/SignIn') } ></img>
                     </div>
                     
                   </div>
              )) }
-            {/* <div onClick={() => {this.handleClickSlide() }}>
-            <img className="v_img" src={logo} alt="logo 1"></img>
-            </div>
-          */}
           </Slider>
         </div>
       </div>
@@ -106,7 +98,7 @@ export default class VerticalMode extends Component {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch("http://localhost:5000/specialdeal_info");
   const posts = await res.json();
   // console.log(posts);
   return {
