@@ -119,4 +119,16 @@
   text-align: center;
   margin-top: 6rem;
 }
-
+#choplc{
+  margin: 5px;
+  width: 220px;
+}
+#choplc::-webkit-file-upload-button{
+  width: 100px;
+  height: 30px;
+  background: rgb(34, 34, 34);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

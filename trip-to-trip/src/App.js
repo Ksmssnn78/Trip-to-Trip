@@ -122,7 +122,7 @@ function App() {
           <Route exact path='/Register' element={<Register />} />
           <Route exact path='/Admin' element={<Admin />} />
           <Route exact path='/Booking' element={<Booking getBookingInfo={setTempBookingData} set_email={tempEmaildata} set_username={tempUNdata} set_fname={tempFNdata} set_lname={tempLNdata} set_address={tempADDdata} set_city={tempCITYdata} set_loc={tempSldata} set_cntry={tempSCdata}/>} />
-          <Route exact path='/Profile' element={<Profile name={userName}/>} />
+          <Route exact path='/Profile' element={<Profile name={userName} fname={tempFNdata} lname={tempLNdata} username={tempUNdata} city={tempCITYdata} address={tempADDdata}/>} />
           <Route exact path='/DetailedLocation' element={<DetailedLocation userEmail={tempEmaildata} location={tempSldata}/>} />
           <Route exact path='/BookingFinal' element={<BookingFinalSummary final_info={tempBookingdata} />} />
 
