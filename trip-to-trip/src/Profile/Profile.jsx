@@ -32,33 +32,30 @@ const Profile = (props) => {
                                 <img id="profile-pic" src={ProfilePic} alt=""></img>
                             </Form.Group>
                             <Form.Group className="mb-1">
-                                <label id="username" size="small">#{props.name}</label>
+                                <label id="username" size="small">#{props.username}</label>
                             </Form.Group>
                         </Form.Group>
 
                         <Row className="mb-3" as={Col}>
-                            <Form.Group className="mb-3">
-                                <label id="email" size="small">{auth.currentUser.email}</label>
-                            </Form.Group>
                             <Form.Group as={Col}>
-                                <TextField id="fname" size="small" label="First Name" variant="outlined" />
+                                <TextField id="fname" size="small" label={props.fname} variant="outlined" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" as={Col}>
-                                <TextField id="lname" size="small" label="Last Name" variant="outlined" />
+                                <TextField id="lname" size="small" label={props.lname} variant="outlined" />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <TextField id="password" size="small" label="Password" variant="outlined" />
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <TextField id="address" size="small" label="Address" variant="outlined" />
+                                <TextField id="address" size="small" label={props.address} variant="outlined" />
                             </Form.Group>
                             <Form.Group as={Col}>
-                                <TextField id="city" size="small" label="City" variant="outlined" />
+                                <TextField id="city" size="small" label={props.city} variant="outlined" />
                             </Form.Group>
 
                             <Form.Group as={Col} className="mb-3">
-                                <TextField id="state" size="small" label="State" variant="outlined" />
+                                <TextField id="state" size="small" label={props.city} variant="outlined" />
                             </Form.Group>
                             <Form.Group id="btn">
                                 <Button id="btn-update" variant="contained">Update</Button>
