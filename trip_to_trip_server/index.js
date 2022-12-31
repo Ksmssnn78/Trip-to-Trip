@@ -47,7 +47,9 @@ app.use('/hotels_info',hotel_data)
 /// post_info information
 const post_data = require('./routers/post_info')
 app.use('/post_info',post_data)
-
+/// special_deals information
+const SpecialDeal_data = require('./routers/special_deals')
+app.use('/specialdeal_info',SpecialDeal_data)
 
 
 /// this section is for post as post does not working in routing methods
@@ -435,6 +437,54 @@ MongoClient.connect(url, function(err, db) {
             console.log('Error...close');
           });
         console.log("1 document inserted");
+        ress.sendFile(__dirname+'/index.html');
+    })
+    })
+    
+});
+
+
+///posting special deal offer
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("trip_to_trip");
+    app.post('/addSpecialDeal',upload.single("file"), (req, ress) => {
+        const SDeal_info = req.body;
+        const SDeal_img = req.file;
+        console.log(SDeal_img);
+        if (typeof SDeal_img == 'undefined') {
+            var finalImg = {}
+        }
+        else{
+            const newImg = fs.readFileSync('./uploads/'+SDeal_img.filename);
+            const encImg = newImg.toString('base64');
+            var finalImg={
+            name:SDeal_img.filename,
+            contentType: SDeal_img.mimetype,
+            size: SDeal_img.size,
+            image: Buffer(encImg,"base64")
+            };
+        }
+            var myobj = {
+                offer: SDeal_info.offer,
+                location: SDeal_info.loc_name,
+                details: SDeal_info.details,
+                imageinfo:finalImg
+            };
+        console.log(myobj);
+        dbo.collection("special_deals").insertOne(myobj, function(err, res) {
+        if (err) throw err;
+        // db.close();
+        db.on('close', function () {
+            console.log('Error...close');
+          });
+        console.log("1 document inserted");
+        if (typeof SDeal_img != 'undefined') {
+                fs.unlink('./uploads/'+post_img.filename,function(err){
+                if(err) return console.log(err);
+                console.log('file deleted successfully');
+            }); 
+        }
         ress.sendFile(__dirname+'/index.html');
     })
     })

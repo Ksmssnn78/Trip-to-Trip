@@ -53,6 +53,7 @@ function App() {
   }
 
   const filterspotdata = (lc, UE) => {
+    console.log("in Appjs location modified: " + location_data )
     if (location_data !== "") {
       let temp = spot_data.filter(data => data.location === location_data);
       if (temp.length !== 0) {
@@ -115,14 +116,14 @@ function App() {
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Discover" element={<DiscoverPage set_B_DfD={setLocationData} />} />
           <Route exact path='/Community' element={<Community email={userName} fname={tempFNdata} lname={tempLNdata}/>} />
-          <Route exact path='/SpecialDeal' element={<SpecialDeal set_B_D={setLocationData} />} />
+          <Route exact path='/SpecialDeal' element={<SpecialDeal email={userName} set_B_D={setLocationData} />} />
           <Route exact path='/AboutUs' element={<AboutUs />} />
           <Route exact path='/SignIn' element={<SignIn />} />
           <Route exact path='/Register' element={<Register />} />
           <Route exact path='/Admin' element={<Admin />} />
           <Route exact path='/Booking' element={<Booking getBookingInfo={setTempBookingData} set_email={tempEmaildata} set_username={tempUNdata} set_fname={tempFNdata} set_lname={tempLNdata} set_address={tempADDdata} set_city={tempCITYdata} set_loc={tempSldata} set_cntry={tempSCdata}/>} />
           <Route exact path='/Profile' element={<Profile name={userName}/>} />
-          <Route exact path='/DetailedLocation' element={<DetailedLocation userEmail={tempEmaildata} location={location_data}/>} />
+          <Route exact path='/DetailedLocation' element={<DetailedLocation userEmail={tempEmaildata} location={tempSldata}/>} />
           <Route exact path='/BookingFinal' element={<BookingFinalSummary final_info={tempBookingdata} />} />
 
           <Route exact path='/' element={<Home />} />
