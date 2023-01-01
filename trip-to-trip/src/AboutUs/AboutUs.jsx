@@ -12,11 +12,7 @@ const AboutUs = () => {
                     <p>Anyone can get a review on a specific Place without and difficulties.Here anyone can share their thoughts without any restrictions
                         on Specific categories.User can Search different places around the world and also take our service for tour
                         arrangements.</p></h5>
-
             </div>
-            <footer className='footer'>
-                <small className='' > Copyright @ 2022 All right reserved by team Geekbytes</small>
-            </footer>
         </div>
     );
 };
