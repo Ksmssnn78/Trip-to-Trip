@@ -53,16 +53,17 @@ function App() {
   }
 
   const filterspotdata = (lc, UE) => {
-    console.log("in Appjs location modified: " + location_data )
+    console.log(location_data)
     if (location_data !== "") {
       let temp = spot_data.filter(data => data.location === location_data);
       if (temp.length !== 0) {
         setTempSlData(temp[0].location);
         setTempSCData(temp[0].country);
-      }
-    }else{
-      setTempSlData("");
-      setTempSCData("");
+      }else{
+        console.log("this is called in appjs");
+        setTempSlData("");
+        setTempSCData("");
+    }
     }
     if (UE !== "") {
       let temp = userdata.filter(data => data.email === UE);

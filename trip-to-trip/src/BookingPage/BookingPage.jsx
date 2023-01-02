@@ -52,6 +52,7 @@ const BookingPage = (props) => {
       },[])
 
     const submitbooking = (e) =>{
+        let flag = false;
         e.preventDefault();
         let check_b = document.getElementById("checkterm");
         if(check_b.checked){
@@ -66,7 +67,15 @@ const BookingPage = (props) => {
             console.log(book);
             console.log(props.set_loc);
             try{
-                if (book.person === "" || book.room === "" || book.days === "" || book.start_loc === "" || book.vehicle_type === "" || book.hotel === "") {
+                Object.keys(book).map(function(keyName, keyIndex) {
+                    // use keyName to get current key's name
+                    // and a[keyName] to get its value
+                    if(book[keyName] === "")
+                    {
+                        flag = true;
+                    }
+                  })
+                if (flag) {
                     // setErrMsg("Fill all fields correctly!");
                     toast.error('Fill all fields correctly!', {
                         position: "top-right",

@@ -41,7 +41,7 @@ export default class VerticalMode extends Component {
 
     mouse_Down_Coords = (e,item) => {
       window.checkForDrag = e.clientX;
-      // this.props.getD(item)
+      this.props.getD(item)
     };
 
     click_Or_Drag = (e,item) => {
@@ -60,7 +60,7 @@ export default class VerticalMode extends Component {
     render() {
       const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
         vertical: true,
