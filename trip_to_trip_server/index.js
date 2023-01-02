@@ -480,7 +480,7 @@ MongoClient.connect(url, function(err, db) {
           });
         console.log("1 document inserted");
         if (typeof SDeal_img != 'undefined') {
-                fs.unlink('./uploads/'+post_img.filename,function(err){
+                fs.unlink('./uploads/'+SDeal_img.filename,function(err){
                 if(err) return console.log(err);
                 console.log('file deleted successfully');
             }); 
@@ -491,12 +491,66 @@ MongoClient.connect(url, function(err, db) {
     
 });
 
+/// update profile form profile page in react
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("trip_to_trip");
+    app.post('/post/DemoData',upload.single("file"), (req, ress) => {
+        const profile_up_info = req.body;
+        const profile_up_img = req.file;
+        if (typeof profile_up_img == 'undefined') {
+            var finalImg = {}
+        }
+        else{
+            const newImg = fs.readFileSync('./uploads/'+profile_up_img.filename);
+            const encImg = newImg.toString('base64');
+            var finalImg={
+                name:profile_up_img.filename,
+                contentType: profile_up_img.mimetype,
+                size:profile_up_img.size,
+                image: Buffer(encImg,"base64")
+            };
+        }
+            var myobj = {
+                username: profile_up_info.username,
+                fname: profile_up_info.fname,
+                lname: profile_up_info.lname,
+                address: profile_up_info.address,
+                city: profile_up_info.city
+            };
+        if(!(Object.keys(finalImg).length === 0))
+            {
+                myobj.imageinfo = finalImg;
+            }
+        let myquery = { email: profile_up_info.email}
+        console.log(myquery)
+        console.log(myobj)
+        dbo.collection("userdata").updateOne(myquery,{$set: myobj}, function(err, res) {
+            if (err) throw err;
+            db.on('close', function () {
+                console.log('Error...close');
+              });
+            console.log("1 document updated!");
+            if (typeof profile_up_img != 'undefined') {
+                    fs.unlink('./uploads/'+profile_up_img.filename,function(err){
+                    if(err) return console.log(err);
+                    console.log('file deleted successfully');
+                }); 
+            }
+            ress.sendFile(__dirname+'/index.html');
+        });
+    });
+});
+
 // posting data from react (user data)
-app.post('/post/postData',upload.single("file"),(req, ress) => {
+app.post('/post/notinterested',upload.single("file"),(req, ress) => {
     const post_info = req.body;
     const post_img = req.file;
     console.log(post_info);
-    console.log(post_img.filename);
+    if(post_img !== undefined){
+        console.log(post_img);
+    }
+        
 });
 
 app.listen(5000);

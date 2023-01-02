@@ -35,9 +35,8 @@ const SignIn = () => {
                 theme: "light",
             });
             return;
-        }
-
-        signInWithEmailAndPassword(auth, logEmail.email, logEmail.password)
+        }else{
+            signInWithEmailAndPassword(auth, logEmail.email, logEmail.password)
             .then(async (res) => {
                 const user = res.user;
                 await updateProfile(user, {
@@ -45,7 +44,7 @@ const SignIn = () => {
                 });
                 toast.success("Let's go in!", {
                     position: "top-right",
-                    autoClose: 2000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -68,6 +67,9 @@ const SignIn = () => {
                     theme: "light",
                 });
             });
+        }
+
+        
     }
 
 
@@ -85,7 +87,7 @@ const SignIn = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <TextField id="outlined-logpass" onChange={(event) => setLogEmail((prev) => ({ ...prev, password: event.target.value }))} size="small" label="Password" variant="outlined" />
+                        <TextField id="outlined-logpass" type="password" onChange={(event) => setLogEmail((prev) => ({ ...prev, password: event.target.value }))} size="small" label="Password" variant="outlined" />
                     </Form.Group>
 
                     <Form.Group id="btn">

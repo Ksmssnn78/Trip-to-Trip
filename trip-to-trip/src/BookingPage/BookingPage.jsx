@@ -68,8 +68,6 @@ const BookingPage = (props) => {
             console.log(props.set_loc);
             try{
                 Object.keys(book).map(function(keyName, keyIndex) {
-                    // use keyName to get current key's name
-                    // and a[keyName] to get its value
                     if(book[keyName] === "")
                     {
                         flag = true;

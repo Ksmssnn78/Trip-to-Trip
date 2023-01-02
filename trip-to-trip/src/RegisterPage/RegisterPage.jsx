@@ -52,9 +52,10 @@ const RegisterPage = () => {
             });
             return;
         }
-
-        setSubmitButtonDisabled(true);
-        createUserWithEmailAndPassword(auth, regEmail.email, regEmail.password)
+        if(regEmail.password === regEmail.conpass)
+        {
+            setSubmitButtonDisabled(true);
+            createUserWithEmailAndPassword(auth, regEmail.email, regEmail.password)
             .then(async (res) => {
                 setSubmitButtonDisabled(false);
                 const user = res.user;
@@ -63,7 +64,7 @@ const RegisterPage = () => {
                 });
                 toast.success('Registration done!', {
                     position: "top-right",
-                    autoClose: 2000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -89,13 +90,28 @@ const RegisterPage = () => {
                     theme: "light",
                 });
             });
-        if (authErr === "") {
-            axios.post('http://localhost:5000/adduser', regEmail).then(respose => {
-                console.log(respose)
-            }).catch(error => {
-                console.log(error)
-            })
+            if (authErr === "") {
+                axios.post('http://localhost:5000/adduser', regEmail).then(respose => {
+                    console.log(respose)
+                }).catch(error => {
+                    console.log(error)
+                })
+            }
+
+        }else{
+            toast.error('password not match!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
+
+        
 
 
     }
@@ -127,11 +143,11 @@ const RegisterPage = () => {
 
                     <Row className="mb-3">
                         <Form.Group as={Col}>
-                            <TextField id="outlined-password" onChange={(event) => setRegEmail((prev) => ({ ...prev, password: event.target.value }))} value={regEmail.password} size="small" label="Password" variant="outlined" />
+                            <TextField id="outlined-password" type='password' onChange={(event) => setRegEmail((prev) => ({ ...prev, password: event.target.value }))} value={regEmail.password} size="small" label="Password" variant="outlined" />
                         </Form.Group>
 
                         <Form.Group as={Col}>
-                            <TextField id="outlined-conpass" onChange={(event) => setRegEmail((prev) => ({ ...prev, conpass: event.target.value }))} value={regEmail.conpass} size="small" label="Confirm password" variant="outlined" />
+                            <TextField id="outlined-conpass" type='password' onChange={(event) => setRegEmail((prev) => ({ ...prev, conpass: event.target.value }))} value={regEmail.conpass} size="small" label="Confirm password" variant="outlined" />
                         </Form.Group>
                     </Row>
 
