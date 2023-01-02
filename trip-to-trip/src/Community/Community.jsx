@@ -90,7 +90,7 @@ const Community = (props) => {
             <div id="second">
                 <Form id="create-post" encType="multipart/form-data">
                     <TextField id="outlined-loguser" onChange={(event) => setPostData((prev) => ({ ...prev, description: event.target.value }))} size="small" label="What's New?" variant="outlined" />
-                    <input type="file" onChange={handleImagefile} name='file'></input>
+                    <input id="choplc" type="file" onChange={handleImagefile} name='file'></input>
                     <button id="btn-post" onClick={postIt}>Post it</button>
                 </Form>
                 

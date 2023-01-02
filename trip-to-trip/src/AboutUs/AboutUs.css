@@ -1,26 +1,36 @@
-.about-container {
-    text-align: center;
-    color:rgb(31, 32, 32);
-    padding-top: 140px;
-    padding-bottom: 126px;
-    background-image: url("../resources/Group_207.png");
-    height: 100vh;
-    width: 100vw;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+#about {
+  background-image: url("../resources/Group_207.png");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.about-container {
+  height: auto;
+  width: 900px;
+  padding: 5px 5px 1px 5px;
+  position: relative;
+  top: 15rem;
+  left: 30rem;
+  text-align: center;
+  color: rgb(31, 32, 32);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
+}
+.about-head{
+    margin-top: 20px;
+}
 .about-para {
-    padding: 25px;
-    text-align: justify;
+  padding: 15px 30px 0 30px;
+  text-align: justify;
+  margin-bottom: 100px;
 }
 
 .about-head {
-    color:rgb(31, 32, 32);
-
-}
-
-.footer {
-    color: white;
-    background-color: rgb(31, 32, 32);
-    padding-top: 10px;
-    padding-bottom: 10px;
+  color: rgb(31, 32, 32);
 }
