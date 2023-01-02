@@ -20,6 +20,7 @@ import { auth } from './Firebase/config';
 import Booking from './BookingPage/BookingPage';
 import DetailedLocation from './DetailedLocation/DetailedLocation';
 import BookingFinalSummary from './BookingFinalSummary/BookingFinalSummary';
+import Footer from './Footer/Footer';
 
 function App() {
 
@@ -129,6 +130,7 @@ function App() {
           <Route exact path='/' element={<Home />} />
         </Routes>
       </Router>
+      <Footer/>
     </div>
   );
 }

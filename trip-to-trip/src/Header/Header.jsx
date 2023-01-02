@@ -24,7 +24,6 @@ const Header = (props) => {
                 <Link className='links' to="/Community">Community</Link>
                 <Link className='links' to="/SpecialDeal">Special Deal</Link>
                 <Link className='links' to="/AboutUs">About Us</Link>
-                {/* <Link className='links' to="/SignIn">Sign in</Link> */}
                 {
                     props.name !== "" ? <Link className='links' onClick={logout}>Sign out</Link>
                         : <div id='navhide'>
