@@ -82,15 +82,9 @@ const PauseOnHover = (props) => {
   };
   return (
     <div id="pause-main">
-    <h3 id="POH-title">Select A Location : </h3>
+    <h3 id="POH-title">Select A Location</h3>
     <Slider {...settings} arrows={false}>
-      {/* {
-        props.timages.length > 0 && props.timages.map((x) => (
-          <div key={x?.id} onClick={handleClick} >
-            <img className='c_img' src={x?.url} alt="logo 1"></img>
-          </div>
-        ))
-      } */}
+   
       {
         filtered_Data.length > 0 && filtered_Data.map( (data) =>(
           <div onMouseDown={e => mouseDown_Coords(e)} onMouseUp={e => clickOr_Drag(e,data?.location)} key={data?._id}>

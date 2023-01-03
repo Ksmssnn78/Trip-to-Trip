@@ -6,6 +6,7 @@ import cloud3 from "../resources/c3.png";
 import Lottie from 'lottie-react';
 import HomeAnime from '../resources/homelib.json';
 
+
 import { motion } from 'framer-motion';
 
 

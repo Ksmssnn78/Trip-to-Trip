@@ -41,7 +41,7 @@ export default class VerticalMode extends Component {
 
     mouse_Down_Coords = (e,item) => {
       window.checkForDrag = e.clientX;
-      // this.props.getD(item)
+      this.props.getD(item)
     };
 
     click_Or_Drag = (e,item) => {
@@ -74,24 +74,24 @@ export default class VerticalMode extends Component {
       };
       return (
         <div id="vertical_main">
-        <div id="vertical-slick">
-          <h2 id="VM_heading">Special Deal for our lovely costomers:</h2>
-          <Slider {...settings} ref={slider => this.slider = slider }>
-          { this.state.posts.map((post) => (
-                  <div className="VM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e,post.email)} onMouseUp={e => this.click_Or_Drag(e,post?.location)}  key={post?._id}>
-                    <div className="vm-slick-inner-div">
-                      <h1> {post?.offer}%</h1>
-                      <h3>{post?.location}</h3>
-                      <p className="vm-slick-inner-text">{post?.details}</p>
+          <div id="vertical-slick">
+            <h3 id="VM_heading">Special Deal for our lovely customers</h3>
+            <Slider {...settings} ref={slider => this.slider = slider }>
+            { this.state.posts.map((post) => (
+                    <div className="VM_slick_div" onMouseDown={e => this.mouse_Down_Coords(e,post?.location)} onMouseUp={e => this.click_Or_Drag(e,post?.location)}  key={post?._id}>
+                      <div className="vm-slick-inner-div">
+                        <h1> {post?.offer}%</h1>
+                        <h3>{post?.location}</h3>
+                        <p className="vm-slick-inner-text">{post?.details}</p>
+                      </div>
+                      <div>
+                        <img className="v_img" src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="logo 1" onClick = {this.props.email !== ""?()=>this.props.navigation('/Booking') :()=>this.props.navigation('/SignIn') } ></img>
+                      </div>
+                      
                     </div>
-                    <div>
-                      <img className="v_img" src={"data:image/jpeg;base64," + post?.imageinfo.image} alt="logo 1" onClick = {this.props.email !== ""?()=>this.props.navigation('/Booking') :()=>this.props.navigation('/SignIn') } ></img>
-                    </div>
-                    
-                  </div>
-             )) }
-          </Slider>
-        </div>
+              )) }
+            </Slider>
+          </div>
       </div>
     );
   }

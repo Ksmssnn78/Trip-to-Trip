@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import ProPic from '../resources/adventurer.png';
 
 
 const Community = (props) => {
@@ -74,7 +75,11 @@ const Community = (props) => {
             <div id="first">
                 <div id="profile">
                     <div id="image">
-                        <img src="../resources/Home.png" alt="" />
+                    {
+                        (Object.keys(props.pro_img).length === 0) ?
+                        <img className='commuity_pro_img' src={ProPic} alt="profile image"/>
+                        : <img className='commuity_pro_img' src={"data:image/jpeg;base64," + props.pro_img.image} alt="profile image"/>
+                    }
                     </div>
                     <div id="profile-name">
                         <p>

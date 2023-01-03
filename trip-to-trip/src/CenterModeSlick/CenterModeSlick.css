@@ -16,6 +16,16 @@
     margin: auto;
     overflow: hidden;
 }
+#center-title-main{
+    text-align: center;
+    height: 3rem;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: azure;
+    display: inline-block;
+}
 .c_img{
     height: var(--image-height-CMS);
     width: 98%;

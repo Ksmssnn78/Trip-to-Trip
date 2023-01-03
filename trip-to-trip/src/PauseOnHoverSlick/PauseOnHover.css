@@ -27,7 +27,11 @@
     width: var(--title-width-POH);
     transition: 1s;
     overflow: hidden;
-    height: 2rem;
+    height: 3rem;
+    padding: 5px;
+    background-color: azure;
+    text-align: center;
+    border-radius: 5px;
 }
 .P_img{
     height: var(--image-height-POH);

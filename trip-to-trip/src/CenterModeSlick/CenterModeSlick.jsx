@@ -67,7 +67,7 @@ const CenterModeSlick = (props) => {
   
   return (
     <div id="center-main"  >
-      <h3>Select A Country :</h3>
+      <h3 id="center-title-main">Select A Country</h3>
     <Slider {...settings} id='imgSlider' >
       {
         imgs.length > 0 && imgs.map((item) => (
