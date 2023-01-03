@@ -79,7 +79,7 @@ const RegisterPage = () => {
                 authErr = err.message;
                 console.log(authErr);
                 setSubmitButtonDisabled(false);
-                toast.error('Already registered with this email!', {
+                toast.error(authErr, {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
