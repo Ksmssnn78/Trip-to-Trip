@@ -65,7 +65,7 @@
 #DL_submit_btn{
     margin: auto;
     width: 10vw;
-    background-color: rgb(31, 32, 32);
+    background-color: rgb(170, 47, 228);
     color: aliceblue;
     height: 3rem;
     border-radius: 10px;
@@ -73,5 +73,8 @@
     border: 0px;
 }
 #DL_submit_btn:hover{
-    background-color: rgb(241, 119, 48);
+    background-color: white;
+    color: rgb(170, 47, 228);
+    border: 1px solid rgb(170, 47, 228);
+    transition: all 0.3s ease;
 }

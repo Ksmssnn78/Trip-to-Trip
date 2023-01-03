@@ -33,7 +33,7 @@ export default class VerticalMode extends Component {
           this.setState({
             posts: data.props.posts
           });
-          // console.log("data fetching done!");
+          console.log("data fetching done!");
           // console.log(this.state.posts);
         });
         
