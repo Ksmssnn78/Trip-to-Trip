@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <title>Admin panel</title>
   </head>
 
   <body id="admin-container">
     <div id="ad-head">
-      <h1>This is test to read data from website and save it on mongobd</h1>
+      <h1 id="ad-head-title">Admin panel</h1>
+      <button id="ad-head-btn"><a id="ad-head-link" href="./request.html">Booking Request</a></button>
     </div>
 
     <div id="admin-1st">
@@ -101,40 +102,7 @@
         </form>
       </div>
 
-      <!-- <div id="CNT-Flight">
-        <h4 id="head-flight">Add flight</h4>
-        <form action="/addflight" method="post">
-          <input
-            class="plc"
-            type="text"
-            placeholder="flight name"
-            name="flight"
-            required
-          />
-          <input
-            class="plc"
-            type="text"
-            placeholder="flight code"
-            name="flightcode"
-            required
-          />
-          <input
-            class="plc"
-            type="text"
-            placeholder="start dest"
-            name="start_destination"
-            required
-          />
-          <input
-            class="plc"
-            type="text"
-            placeholder="end dest"
-            name="end_destination"
-            required
-          />
-          <button id="btn-ad" type="submit">add flight</button>
-        </form>
-      </div> -->
+     
       <div id="CNT-Country">
         <h4 id="head-country">Add country</h4>
         <form action="/addcountry" method="post" enctype="multipart/form-data">
@@ -294,35 +262,6 @@
         </form>
       </div>
 
-      <!-- <div id="CNT-Special">
-        <h4 id="head-special">Add Special Deal</h4>
-        <form action="/addspecialdeal" method="post">
-          <input
-            class="plc"
-            type="number"
-            placeholder="offer percentage"
-            name="offer"
-            required
-          />
-          <input
-            class="plc"
-            type="text"
-            placeholder="location"
-            name="loc_name"
-            required
-          />
-          <input
-            class="plc"
-            type="text"
-            placeholder="details"
-            name="details"
-            required
-          />
-          <input class="choplc" type="file" placeholder="upload" name="file" />
-          <button id="btn-ad" type="submit">add flight</button>
-        </form>
-      </div> -->
-
       <div id="CNT-Location">
         <h4 id="head-location">Add location</h4>
         <form action="/addlocation" method="post" enctype="multipart/form-data">
@@ -362,8 +301,8 @@
 
     <div id="countries"></div>
 
-    <div id="backS">
-      <script>
+    
+      <!-- <script>
         fetch("/home")
           .then((res) => res.json())
           .then((info) => {
@@ -382,7 +321,6 @@
               countries.appendChild(p);
             });
           });
-      </script>
-    </div>
+      </script> -->
   </body>
 </html>

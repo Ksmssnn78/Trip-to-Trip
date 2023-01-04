@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./request.css" />
+    <title>Admin panel</title>
+</head>
+<body>
+    <div id="requst_main_div">
+        <div id="requst_header">
+            <h1>All the booking request from customers</h1>
+        </div>
+        <div id="requst_data_main_div">
+            
+        </div>
+        
+    </div>
+<script>
+    fetch("/bookingrecords")
+        .then((res) => res.json())
+        .then((info) => {
+        console.log(info);
+        const countries = document.getElementById("requst_data_main_div");
+        info.forEach((element) => {
+            var board = document.createElement('div');
+            board.className = "requst_data_sub_div";
+            const p_name = document.createElement("h3");
+            const loc = document.createElement("p");
+            const cntry = document.createElement("p");
+            const per = document.createElement("p");
+            const days = document.createElement("p");
+            const hotel = document.createElement("p");
+            const s_loc = document.createElement("p");
+            const email = document.createElement("p");
+
+                p_name.innerHTML ="Name: " + element.fname +" "+element.lname;
+                email.innerHTML = "<strong>Email: </strong> " + element.email;
+                loc.innerHTML ="<strong>Location: </strong>" + element.location ;
+                cntry.innerHTML = "<strong>Country: </strong> " + element.country;
+                per.innerHTML = "<strong>Person: </strong> " + element.person;
+                days.innerHTML = "<strong>Staying for: </strong> " + element.days;
+                hotel.innerHTML = "<strong>Hotel: </strong> " + element.hotel;
+                s_loc.innerHTML = "<strong>Starting location: </strong> " + element.start_loc;
+            board.appendChild(p_name);
+            board.appendChild(email);
+            board.appendChild(loc);
+            board.appendChild(cntry);
+            board.appendChild(per);
+            board.appendChild(days);
+            board.appendChild(hotel);
+            board.appendChild(s_loc);
+            countries.appendChild(board);
+        });
+        });
+    </script>
+</body>
+</html>
