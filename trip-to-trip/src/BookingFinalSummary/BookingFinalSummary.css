@@ -1,45 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#parent-BFS{
-    height: 100vh;
-    width: 100vw;
-    background-image: url("../resources/Group_207.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    align-items: center;
-    justify-content: center;
+#parent-BFS {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../resources/Group_207.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
 }
 
-#main-BFS{
-    height: 80vh;
-    width: 80vw;
-    background-color: aliceblue;
-    position: absolute;
-    margin: auto;
-    margin-top: 8rem;
-    padding: 1rem;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.123);
-    border-radius: 20px;
-} 
-#submit-BFS{
-    position: absolute;
-    margin: auto;
-    margin-top: 8rem;
-    padding: 1rem;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex: row;
-    justify-content: space-evenly;
+#main-BFS {
+  height: 60vh;
+  width: 50vw;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin: auto;
+  margin-top: 8rem;
+  padding: 5rem;
+  top: 2rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.123);
+  border-radius: 20px;
+}
+#submit-BFS {
+  position: absolute;
+  margin: auto;
+  margin-top: 8rem;
+  padding: 1rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex: row;
+  justify-content: space-evenly;
+}
+#final-submit-BFS {
+  width: 200px;
+  background-color: rgb(170, 47, 228);
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+#final-submit-BFS:hover {
+  background-color: white;
+  color: rgb(170, 47, 228);
+  border: 1px solid rgb(170, 47, 228);
+  transition: all 0.3s ease;
 }
