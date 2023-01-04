@@ -50,7 +50,9 @@ app.use('/post_info',post_data)
 /// special_deals information
 const SpecialDeal_data = require('./routers/special_deals')
 app.use('/specialdeal_info',SpecialDeal_data)
-
+/// booking records information
+const booking_rec = require('./routers/booking_info')
+app.use('/bookingrecords',booking_rec)
 
 /// this section is for post as post does not working in routing methods
 const Storage = multer.diskStorage({
@@ -548,7 +550,7 @@ app.post('/post/notinterested',upload.single("file"),(req, ress) => {
     const post_img = req.file;
     console.log(post_info);
     if(post_img !== undefined){
-        console.log(post_img);
+        console.log(post_info);
     }
         
 });
