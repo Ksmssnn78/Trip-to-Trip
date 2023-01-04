@@ -1,58 +1,57 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#vertical_main{
-    background-image: url("../resources/Group_207.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    height: 100vh;
-    width: 100%
+#vertical_main {
+  background-image: url("../resources/Group_207.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
 }
-#vertical-slick{
-    width: 60%;
-    height: 84vh;
-    margin: auto;
-    position:relative;
-    top: 8rem;
-    overflow: scroll;
-    
-}
-
-#vertical-slick::-webkit-scrollbar{
-    display: none;
+#vertical-slick {
+  width: 60%;
+  height: 84vh;
+  margin: auto;
+  position: relative;
+  top: 8rem;
+  overflow: scroll;
 }
 
-#VM_heading{
-    margin-bottom: 3rem;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: azure;
-    display: inline-block;
-    border-radius: 5px;
+#vertical-slick::-webkit-scrollbar {
+  display: none;
 }
 
-.VM_slick_div{
-    display: flex !important;
-    justify-content: space-between;
-    background-color: aliceblue;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-}
-.vm-slick-inner-div{
-    flex-basis: 50%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: 1rem;
-}
-.v_img{
-    border-radius: 20px;
-    margin: 20px;
-    height: auto;
-    width: 400px;
+#VM_heading {
+  margin-bottom: 3rem;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
 }
 
+.VM_slick_div {
+  display: flex !important;
+  justify-content: space-between;
+  background-color: aliceblue;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.vm-slick-inner-div {
+  flex-basis: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1rem;
+}
+.v_img {
+  border-radius: 20px;
+  margin: 20px;
+  height: auto;
+  width: 400px;
+}
