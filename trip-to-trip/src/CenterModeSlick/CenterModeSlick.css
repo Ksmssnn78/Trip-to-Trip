@@ -1,59 +1,60 @@
 :root {
-    --display-shown-CMS: visible;
-    --image-height-CMS: 18rem;
-  }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  --display-shown-CMS: visible;
+  --image-height-CMS: 18rem;
 }
-#center-main{
-    width: 90%;
-    /* border: 1px solid red; */
-    align-items: center;
-    position: relative;
-    top: 10rem;
-    margin: auto;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#center-title-main{
-    text-align: center;
-    height: 3rem;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    background-color: azure;
-    display: inline-block;
+#center-main {
+  width: 90%;
+  align-items: center;
+  position: relative;
+  top: 10rem;
+  margin: auto;
+  overflow: hidden;
 }
-.c_img{
-    height: var(--image-height-CMS);
-    width: 98%;
-    align-items: center;
-    border-radius: 20px;
-    box-shadow: 5px 10px 18px #888888 ;
-    visibility: var(--display-shown-CMS) ;
-    padding: 10px;
-    transition: 1s;
-    z-index: -1;
-    position:relative;
+#center-title-main {
+  text-align: center;
+  height: 3rem;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
-.c_level{
-    z-index: 1;
-    width: 98%;
-    text-align: center;
-    font-weight: 600;
-    font-size: 2rem;
-    visibility: var(--display-shown-CMS) ;
-    transition: 1s;
-    margin-top: -5rem;
-    margin-bottom: 3rem;
-    background-color: rgba(188, 240, 247, 0.6);
-    text-shadow: 5px 10px 18px #888888;
-    text-transform: uppercase;
+.c_img {
+  height: var(--image-height-CMS);
+  width: 98%;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 5px 10px 18px #888888;
+  visibility: var(--display-shown-CMS);
+  padding: 10px;
+  transition: 1s;
+  z-index: -1;
+  position: relative;
 }
-.c_name{
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.5rem;
+.c_level {
+  z-index: 1;
+  width: 98%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  visibility: var(--display-shown-CMS);
+  transition: 1s;
+  margin-top: -5rem;
+  margin-bottom: 3rem;
+  background-color: rgba(188, 240, 247, 0.6);
+  text-shadow: 5px 10px 18px #888888;
+  text-transform: uppercase;
+}
+.c_name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
