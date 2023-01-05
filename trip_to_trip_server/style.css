@@ -22,20 +22,24 @@ body::-webkit-scrollbar{
   border-radius: 20px;
 
 }
+#ad-head-title{
+  border-bottom: 3px solid black;
+}
 #ad-head-btn{
   padding: 10px;
-  border-radius: 1rem;
+  border-radius: 5px;
   height: 3rem;
   margin: auto;
   margin-right: 5px;
   background-color: white;
   border: 0;
   box-shadow: 5px 10px 10px hsla(0, 0%, 0%, 0.164);
-  text-transform: uppercase;
+  font-size: 10px;
+  /* text-transform: uppercase; */
   transition: 1s all ease;
 }
 #ad-head-btn::before{
-  background: #FF7675;
+  background: rgb(98, 192, 255);
   content: "";
   position: absolute;
   top: 50%;
@@ -51,7 +55,8 @@ body::-webkit-scrollbar{
 }
 #ad-head-link{
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  color: black;
 }
 #admin-1st {
   margin-top: 25px;
